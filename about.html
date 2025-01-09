@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navegación y Modelo 3D</title>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU7RU56gRoZXk3fcyAD8eQokH1MU3LL2gTqtN" crossorigin="anonymous">
+        <link rel="stylesheet" media="all" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="iconogtavi.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div><a href="projects.html" class="logo">Rᵈ</a></div>
+            <div class="toggle">&#9776;</div>
+            <ul>
+                <li><a href="projects.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="download-btn" href="cv_rodrigo_seco.pdf" target="_blank">Donwolad CV</a></li>
+            </ul>
+        </nav> 
+
+        <script>
+            const toggle = document.querySelector('.toggle');
+            const menu = document.querySelector('nav ul');
+            
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        </script>
+        
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="slide"><img src="img/foto.png" alt="Imagen 1"></div>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="text-content">
+                <h1>About me...</h1>
+                <h2>¡Welcome!</h2>
+                <p>I am Rodrigo Seco Fiastre, a spanish certified graphic designer with expertise in a wide range of creative disciplines. These include 
+                <a>Brand Creation</a>, <a>Audio-Visual Design</a>, <a>3D model</a>, <a>Renders</a>, <a>Motion Graphics</a>, <a>Visual Identity</a>, and 
+                <a>Editorial Design</a>. Additionally, I specialize in managing and designing content for social media, as well as in web development and design using HTML and CSS.</p>
+                <p>I was born in Murcia on December 27, 2001. I spent 10 years living in Madrid before moving to Alicante at the age of 16, where I completed 
+                    my artistic baccalaureate at the IES El Palmeral high school in Orihuela. Afterward, I pursued a higher degree in graphic design at the 
+                    Escuela de Arte Superior y Diseño de Orihuela (EASDO).</p>
+                <p>Upon completing my education, I began my professional career working as a freelance designer for various clients, as well as collaborating 
+                    with the digital marketing agency Nuevecomanueve (NCN) in Orihuela.</p>
+            </div>
+        </div>
+        
+
+    <footer>
+        <div class="footer-social">
+                <a href="https://www.instagram.com/rodrygodesign/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/KomeL_oficial" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+        </div>
+        <div class="footer-text">
+                &copy; 2025 Rodrygo Design. All rights reserved.
+        </div>
+    </footer>
+        
+</body>
+</html>
