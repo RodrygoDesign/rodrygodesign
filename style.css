@@ -225,7 +225,8 @@ h2 {
 
 /* Novedades */
 .novedades {
-    display: flex;
+    display: grid; /* Usamos CSS Grid para organizar las imágenes */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
     justify-content: space-between; 
     gap: 20px; 
     padding-left: 3%;
@@ -252,14 +253,20 @@ h2 {
 
 @media (max-width: 768px) {
     .novedades {
-        flex-direction: column; /* Cambia a diseño vertical */
-        gap: 15px; /* Espaciado más pequeño */
-    }
-
-    .novedades img {
-        width: 100%; /* Cada imagen ocupa todo el ancho del contenedor */
+        grid-template-columns: repeat(2, 1fr);
     }
 }
+
+@media (max-width: 580px) {
+    .novedades {
+        grid-template-columns: 1fr; 
+    }
+}
+
+    .novedades img {
+        width: 100%; 
+    }
+
 
 /* Footer */
 footer {
