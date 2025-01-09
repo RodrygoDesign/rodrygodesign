@@ -123,7 +123,7 @@ nav ul li a:hover {
 /* Contenedor del carrusel */
 .carousel-container {
     width: 100%;
-    height: 540px; 
+    height: 100%; 
     position: relative;
     overflow: hidden;
 }
