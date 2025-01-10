@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    background: linear-gradient(black, rgb(41, 41, 41));
+    background: linear-gradient(rgb(36, 36, 36), rgb(0, 0, 0));
 
 }
 
@@ -29,13 +29,13 @@ nav .logo {
     font-size: 2em;
     color: white;
     font-weight: bold;
-    padding-left: 25px;
+    padding-left: 15px;
     transition: 1s;
 }
 
 nav .logo:hover{
     cursor: default;
-    color: #f291ff;
+    color: #ff7af8;
 }
 
 
@@ -58,7 +58,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color: #f188ff;
+    color: #ff7af8;
 }
 
 @media (max-width: 768px) {
@@ -93,7 +93,7 @@ nav ul li a:hover {
     }
 
     nav .toggle:hover{
-        color: #f188ff;
+        color: #ff7af8;
     }
 }
 
@@ -105,7 +105,7 @@ nav ul li a:hover {
 
 /* Boton descargar curriculum */
 .download-btn {
-    background-color: #f188ff;
+    background-color: #ff7af8;
     color: white;
     border-radius: 5px;
     cursor: pointer;
@@ -170,11 +170,10 @@ nav ul li a:hover {
     background-color: white;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color 0.3s ease;
 }
 
 .dot.active {
-    background-color: #f188ff;
+    background-color: #ff7af8;
 }
 
 /* Texto-parrafo */
@@ -197,7 +196,7 @@ nav ul li a:hover {
 }
 
 .parrafo a{
-    color: #f188ff;
+    color: #ff7af8;
     font-size: 1.09em;
 
 }
@@ -210,7 +209,7 @@ h1 {
 
 h1:hover{
     cursor:default;
-    color: #f291ff;
+    color: #ff7af8;
 }
 
 h2 {
@@ -300,7 +299,12 @@ footer {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
-
+hr {
+    border: none;
+    height: 1px; 
+    background-color: #cb61e6; 
+    margin: 20px 0;
+}
 
 
 
