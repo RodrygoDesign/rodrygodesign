@@ -38,20 +38,20 @@
 
         <div class="contact-form">
                 <div class="text-content">
-                    <h1>Contact Me</h1>
+                    <h1>Contact</h1>
                     <p>You can contact me in different ways: through the social media links located at the bottom 
                         of the website, by calling <a>+34 601394354</a>, or by sending an email to <a>rodrygodesign@gmail.com</a>.</p>
                 </div>
-                <form action="send_email.php" method="POST">
+                <form action="mailto:rodrygodesign@gmail.com" method="POST" enctype="text/plain">
                     <label for="name">Name</label>
                     <input type="text" id="name" name="name" placeholder="Your Name" required>
-                    
+                
                     <label for="email">Email</label>
                     <input type="email" id="email" name="email" placeholder="Your Email" required>
-                    
+                
                     <label for="message">Message</label>
                     <textarea id="message" name="message" placeholder="Write your message here" rows="5" required></textarea>
-                    
+                
                     <button type="submit">Send Message</button>
                 </form>
                 <div class="text-content">
