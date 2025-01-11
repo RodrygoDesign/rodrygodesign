@@ -76,3 +76,11 @@ imageWrapper.addEventListener('mousemove', (event) => {
 imageWrapper.addEventListener('mouseleave', () => {
     image.style.transform = 'translate(0, 0) scale(1)';
 });
+
+
+
+
+
+
+
+

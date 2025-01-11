@@ -61,7 +61,7 @@ nav ul li a:hover {
     color: #ff7af8;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 788px) {
     nav ul {
         flex-direction: column;
         display: none;
@@ -122,7 +122,7 @@ nav ul li a:hover {
 
 /* Contenedor del carrusel */
 .carousel-container {
-    width: 100%;
+    width: 101%;
     height: 100%; 
     position: relative;
     overflow: hidden;
@@ -133,7 +133,7 @@ nav ul li a:hover {
     display: flex;
     width: 100%; 
     height: 100%;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1s ease-in-out;
 }
 
 /* Cada diapositiva */
@@ -149,10 +149,7 @@ nav ul li a:hover {
     object-fit: cover; 
     transition: 1s;
 }
-
-.slide img:hover {
-    scale: 1.001;
-}  
+  
 
 /* Puntos de navegación */
 .dots {
@@ -204,6 +201,8 @@ nav ul li a:hover {
 h1 {
     font-size: 2.3em;
     transition: .3s;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 
 }
 
@@ -231,6 +230,7 @@ h2 {
     padding-left: 3%;
     padding-right: 3%;
     padding-bottom: 3%;
+    padding-top: 3%;
 }
 
 .novedades a {
@@ -348,7 +348,6 @@ hr {
 .text-content a{
     color: #f188ff;
     font-size: 1.09em;
-
 }
 
 .text-content p {
@@ -440,3 +439,99 @@ hr {
 .text-content h1:hover{
     color: #ff7af8;
 }
+
+
+
+
+
+
+/* PROYECTOS */
+
+.project-details {
+    margin: 0 auto;
+}
+
+.text-content p{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.project-details img {
+    width: 100%;
+    height: auto;
+}
+
+.project-details h2 {
+    font-size: 1.8em;
+    transition: .3s;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    margin-left: 5%;
+    margin-top: 20px;
+}
+
+/* Gallery in project page */
+
+/* Galería general */
+.project-gallery {
+    margin-top: 20px;
+    margin-bottom: 30px;
+}
+
+.project-gallery .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Contenedor de cada elemento (imagen o video) */
+.image-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 10px;
+}
+
+/* Estilo para imágenes */
+.image-container img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block;
+    filter: grayscale(100%);
+}
+
+/* Estilo para videos */
+.image-container video {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    display: block;
+    filter: grayscale(100%); /* Video en blanco y negro por defecto */
+}
+
+/* Overlay (superposición de color) */
+.image-container .overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1; 
+    border-radius: 10px;
+    mix-blend-mode: hue;
+    transition: opacity 0.3s ease;
+}
+
+.image-container:hover img {
+    filter: none; /* Quitar filtro en hover */
+    transform: scale(1.03); /* Zoom leve */
+    transition: 0.5s;
+}
+
+.image-container:hover .overlay {
+    opacity: 0; /* Ocultar superposición al pasar el ratón */
+}
+
+
+

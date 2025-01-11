@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Navegación y Modelo 3D</title>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU7RU56gRoZXk3fcyAD8eQokH1MU3LL2gTqtN" crossorigin="anonymous">
+        <link rel="stylesheet" media="all" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="iconogtavi.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div><a href="index.html" class="logo">Rᵈ</a></div>
+            <div class="toggle">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="download-btn" href="cv_rodrigo_seco.pdf" target="_blank">Donwolad CV</a></li>
+            </ul>
+        </nav> 
+
+        <script>
+            const toggle = document.querySelector('.toggle');
+            const menu = document.querySelector('nav ul');
+            
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        </script>
+        
+        <main>
+            <div class="project-details">
+                <section class="text-content">
+                    <img src="img/3.png" alt="Project 1 Main Image">
+                    <h2><a>Ander</a> Rea</h2>
+                    <p>
+                        The trap, rap, and reggaeton artist <a>Ander Rea</a> reached out to Rodrygo Design for the creation of a music video and cover art for his new rap single, 
+                        <a>"Welcome Project 8"</a>. The project required a unique and creative approach to align with the artist’s vision for the song, 
+                        blending raw authenticity with bold, innovative visuals.
+                    </p>
+                    <h2>Design Rationale</h2>
+                    <p>
+                        For the music video, we traveled to a small village in Cazorla, where we recorded a "one-shot" sequence inside a house, 
+                        carefully following the client’s specific requests. In post-production, the video was edited to include a night vision effect, 
+                        as requested by Ander Rea, and enhanced with additional visual and sound elements to elevate the final result. For the cover art, 
+                        we organized a photoshoot with the artist and meticulously edited the selected images, ensuring the final design matched his detailed 
+                        specifications and perfectly complemented the theme of "Welcome Project 8".
+                    </p>
+                    <section class="project-gallery">
+                        <div class="gallery">
+                            <div class="image-container">
+                                <img src="img/proyectos/ander_rea/ander_rea_1.png" alt="Screenshot 1 of Project 1">
+                                <div class="overlay"></div>
+                            </div>
+                            <div class="image-container">
+                                <img src="img/proyectos/ander_rea/ander_rea_2.png" alt="Screenshot 2 of Project 1">
+                                <div class="overlay"></div>
+                            </div>
+                        </div>
+                    </section>
+                    <section class="project-gallery">
+                        <div class="gallery">
+                            <div class="image-container">
+                                <iframe
+                                    width="100%"
+                                    height="auto"
+                                    src="https://www.youtube.com/watch?v=nF-Hrh1JSpg"
+                                    title="YouTube video player"
+                                    frameborder="0"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen>
+                                </iframe>
+                            </div>
+                        </div>
+                    </section>
+            </div>
+        </main>
+    <hr>
+    <footer>
+        <div class="footer-social">
+                <a href="https://www.instagram.com/rodrygodesign/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/KomeL_oficial" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+        </div>
+        <div class="footer-text">
+            &copy; 2025 Rodrygo Design. All rights reserved.
+        </div>
+    </footer>
+        
+</body>
+</html>
