@@ -105,17 +105,15 @@ nav ul li a:hover {
 
 /* Boton descargar curriculum */
 .download-btn {
-    background-color: #ff7af8;
+    background-color: #cd4fff;
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    padding: 7px;    
-    transition: 0.3s;
-    scale: 1;
+    padding: 10px;    
+    transition: 0.4s;
 }
 
 .download-btn:hover {
-    scale: .8;
     color: #000000;
     background-color: #fff1ff;
 }
@@ -371,9 +369,7 @@ hr {
     }
 }
 
-    .no-underline {
-        text-decoration: none;
-    }
+
 
 
 
@@ -454,8 +450,17 @@ hr {
 }
 
 .text-content p{
-    margin-left: 5%;
-    margin-right: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
+}
+
+.text-content img{
+    scale: 1;
+    transition: 1s;
+}
+
+.text-content img:hover{
+    scale: 1.01;
 }
 
 .project-details img {
@@ -468,16 +473,17 @@ hr {
     transition: .3s;
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    margin-left: 5%;
+    margin-left: 20%;
+    margin-right: 20%;
     margin-top: 20px;
 }
-
-/* Gallery in project page */
 
 /* Galería general */
 .project-gallery {
     margin-top: 20px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
+    margin-left: 5%;
+    margin-right: 5%;
 }
 
 .project-gallery .gallery {
@@ -485,6 +491,7 @@ hr {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
+
 
 /* Contenedor de cada elemento (imagen o video) */
 .image-container {
@@ -501,6 +508,12 @@ hr {
     transition: transform 0.3s ease, opacity 0.3s ease;
     display: block;
     filter: grayscale(100%);
+}
+
+.image-container:hover img {
+    filter: none; /* Quitar filtro en hover */
+    transform: scale(1.03); /* Zoom leve */
+    transition: 0.5s;
 }
 
 /* Estilo para videos */
@@ -525,7 +538,7 @@ hr {
     transition: opacity 0.3s ease;
 }
 
-.image-container:hover img {
+.image-container:hover video {
     filter: none; /* Quitar filtro en hover */
     transform: scale(1.03); /* Zoom leve */
     transition: 0.5s;
@@ -565,4 +578,3 @@ hr {
 .image-container:hover .play-button {
     opacity: 1; /* Mostrar el botón al pasar el ratón */
 }
-
