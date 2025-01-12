@@ -347,7 +347,6 @@ hr {
 .text-content p {
     font-size: 1.1rem;
     color: #ffffff;
-    padding-bottom: 3%;
 }
 
 /* Responsive Design */
@@ -475,6 +474,10 @@ hr {
 }
 
 /* Galería general */
+.gallery {
+    margin-top: 3%;
+}
+
 .project-gallery {
     margin-top: 20px;
     margin-bottom: 20px;
