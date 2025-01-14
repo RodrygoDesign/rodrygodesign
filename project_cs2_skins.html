@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Rodrygo Design Web</title>
+        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU7RU56gRoZXk3fcyAD8eQokH1MU3LL2gTqtN" crossorigin="anonymous">
+        <link rel="stylesheet" media="all" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <link rel="icon" type="image/png" href="iconogtavi.png">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <script src="js/script.js"></script>
+    </head>
+
+    <body>
+        <nav>
+            <div><a href="index.html" class="logo">Rᵈ</a></div>
+            <div class="toggle">&#9776;</div>
+            <ul>
+                <li><a href="index.html">Projects</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a class="download-btn" href="cv_rodrigo_seco.pdf" target="_blank">Donwolad CV</a></li>
+            </ul>
+        </nav> 
+
+        <script>
+            const toggle = document.querySelector('.toggle');
+            const menu = document.querySelector('nav ul');
+            
+            toggle.addEventListener('click', () => {
+                menu.classList.toggle('active');
+            });
+        </script>
+        
+        <main>
+            <div class="project-details">
+                <section class="text-content">
+                    <img src="img/2.png" alt="Project 1 Main Image">
+                    <h2><a>Counter-Strike 2</a> | Skins Colecction</h2>
+                    <p>
+                        I have been playing the <a>Counter-Strike</a> game series for a long time, 
+                        and I consider myself a devoted fan of these shooter games. My passion has only 
+                        grown with Valve's latest installment, Counter-Strike 2, which has quickly become 
+                        my favorite in the series.
+                    </p>
+                    <p>
+                        The weapon skins in online shooters like Counter-Strike 2 are a standout feature, 
+                        supported by a billion-euro market. Through the Steam platform, players can buy, sell, 
+                        and trade skins via the Community Market. Skins, which vary in rarity and design, can be 
+                        earned through gameplay, purchased directly, or unboxed from cases using in-game keys. 
+                        The value of a skin is influenced by its rarity, condition, and demand, with some fetching 
+                        thousands of euros. This economy thrives on player-to-player transactions and has even led 
+                        to a secondary industry of third-party trading platforms.
+                    </p>
+                    <p>
+                        An example of these skins is the <a>"Next-Gen"</a> collection, which currently features the AK-47 
+                        and the TEC-9. This collection stands out with its futuristic and modern design, showcasing 
+                        a striking combination of white, black, and pink colors. These vibrant hues create a sleek 
+                        and elegant aesthetic, making the skins visually appealing and highly sought after by players.
+                    </p>
+
+                    <section class="project-gallery">
+                        <div class="gallery">
+                            <div class="image-container">
+                                <img src="img/proyectos/cs2-skins/tec-1.gif" alt="Screenshot 1 of Project 1">
+                            </div>
+                            <div class="image-container">
+                                <img src="img/proyectos/cs2-skins/tec-2.gif" alt="Screenshot 2 of Project 1">
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="project-gallery">
+                        <div class="gallery">
+                            <div class="image-container">
+                                <img src="img/proyectos/cs2-skins/ak-47_2.gif" alt="Screenshot 1 of Project 1">
+                            </div>
+                            <div class="image-container">
+                                <img src="img/proyectos/cs2-skins/Ak-47-1.gif" alt="Screenshot 2 of Project 1">
+                            </div>
+                        </div>
+                    </section>
+            </div>
+        </main>
+    <hr>
+    <footer>
+        <div class="footer-social">
+                <a href="https://www.instagram.com/rodrygodesign/" target="_blank" aria-label="Instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://x.com/KomeL_oficial" target="_blank" aria-label="Twitter">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" aria-label="Telegram">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+        </div>
+        <div class="footer-text">
+            &copy; 2025 Rodrygo Design. All rights reserved.
+        </div>
+    </footer>
+        
+</body>
+</html>
