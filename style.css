@@ -470,27 +470,30 @@ hr {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     margin-left: 20%;
     margin-right: 20%;
-    margin-top: 20px;
+    margin-top: 3%;
+}
+
+
+/* Contenedor principal */
+.project-gallery {
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    padding: 20px; 
+    box-sizing: border-box;
+    width: 100%;
 }
 
 /* Galería general */
 .gallery {
-    margin-top: 3%;
-}
-
-.project-gallery {
-    margin-top: 4%;
-    margin-bottom: 20px;
-    margin-left: 5%;
-    margin-right: 5%;
-}
-
-.project-gallery .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); 
+    gap: 20px; 
+    width: 100%; 
+    max-width: 1200px;
+    justify-content: center; 
+    box-sizing: border-box;
 }
-
 
 /* Contenedor de cada elemento (imagen o video) */
 .image-container {
@@ -498,6 +501,7 @@ hr {
     width: 100%;
     overflow: hidden;
     border-radius: 10px;
+    margin: 0 auto; 
 }
 
 /* Estilo para imágenes */
@@ -510,8 +514,8 @@ hr {
 }
 
 .image-container:hover img {
-    filter: none; /* Quitar filtro en hover */
-    transform: scale(1.03); /* Zoom leve */
+    filter: none; 
+    transform: scale(1.03); 
     transition: 0.5s;
 }
 
@@ -521,7 +525,12 @@ hr {
     height: auto;
     transition: transform 0.3s ease, opacity 0.3s ease;
     display: block;
-    filter: grayscale(100%); /* Video en blanco y negro por defecto */
+}
+
+.image-container:hover video {
+    filter: none; 
+    transform: scale(1.03);
+    transition: 0.5s;
 }
 
 /* Overlay (superposición de color) */
@@ -537,15 +546,23 @@ hr {
     transition: opacity 0.3s ease;
 }
 
-.image-container:hover video {
-    filter: none; /* Quitar filtro en hover */
-    transform: scale(1.03); /* Zoom leve */
-    transition: 0.5s;
+.image-container:hover .overlay {
+    opacity: 0; 
 }
 
-.image-container:hover .overlay {
-    opacity: 0; /* Ocultar superposición al pasar el ratón */
+/* Diseño adaptable */
+@media (max-width: 768px) {
+    .gallery {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); 
+    }
 }
+
+@media (max-width: 480px) {
+    .gallery {
+        grid-template-columns: 1fr; 
+    }
+}
+
 
 
 .video-link {
