@@ -1,6 +1,6 @@
 html {
     scroll-behavior: smooth;
-    background: linear-gradient(rgb(36, 36, 36), rgb(0, 0, 0));
+    background: linear-gradient(rgb(17, 17, 17), rgb(17, 17, 17));
 
 }
 
@@ -221,30 +221,25 @@ h2 {
 
 /* Novedades */
 .novedades {
-    display: grid; /* Usamos CSS Grid para organizar las imágenes */
-    grid-template-columns: repeat(3, 1fr); /* Tres columnas de igual tamaño */
+    display: grid; 
+    grid-template-columns: repeat(3, 1fr); 
     justify-content: space-between; 
-    gap: 20px; 
-    padding-left: 3%;
-    padding-right: 3%;
-    padding-bottom: 3%;
-    padding-top: 3%;
 }
 
 .novedades a {
     display: block;
-    flex: 1;
-    text-decoration: none; 
+    line-height: 0;
 }
 
 .novedades img {
-    width: 100%;
-    border-radius: 20px; 
-    transition: transform 0.3s ease, box-shadow 0.3s ease; 
+    display: block;
+    margin: 0;
+    padding: 0;
 }
 
 .novedades img:hover {
     transform: scale(1.005); 
+    transition: .4s;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3); 
 }
 
@@ -301,7 +296,7 @@ hr {
     border: none;
     height: 1px; 
     background-color: #cb61e6; 
-    margin: 5px 0;
+    margin: 0px;
 }
 
 
