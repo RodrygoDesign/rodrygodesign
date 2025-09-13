@@ -212,9 +212,15 @@ document.addEventListener('DOMContentLoaded', () => {
     if (e.target === lightbox) closeLightbox();
   });
 
+document.addEventListener('keydown', e => { if(e.key==='Escape') closeLightbox(); });
+
+
   /* ----------------------------
      Accessibility: keyboard focus for hamburger and sidebar
   ---------------------------- */
+hamburger.setAttribute('aria-expanded', sidebar.classList.contains('active'));
+
+
   if (hamburger) {
     hamburger.addEventListener('keydown', (e) => {
       if (e.key === 'Enter' || e.key === ' ') {
@@ -225,3 +231,30 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+
+  // Lazy loading avanzado con IntersectionObserver para videos
+  const videos = document.querySelectorAll('video[loading="lazy"]');
+
+  if ('IntersectionObserver' in window) {
+    const videoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const video = entry.target;
+          // Cargar el video
+          video.preload = 'auto';
+          observer.unobserve(video);
+        }
+      });
+    }, { rootMargin: '200px' });
+
+    videos.forEach(video => videoObserver.observe(video));
+  } else {
+    // fallback: cargar todos los videos
+    videos.forEach(video => video.preload = 'auto');
+  }
+
+
+
+
+  
