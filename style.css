@@ -102,23 +102,20 @@ body::-webkit-scrollbar { display: none; }
   justify-content: space-between;
   cursor: pointer;
   z-index: 2000;
-
-  background: rgba(0, 0, 0, 0.4); /* negro semitransparente */
+  background: rgba(0, 0, 0, 0.4);
   padding: 8px;
   border-radius: 8px;
 }
-
 .hamburger svg {
   filter: invert(100%);
 }
-
 .hamburger span {
   display: block;
   height: 4px;
   background-color: white;
   border-radius: 2px;
   transition: 0.3s;
-  mix-blend-mode: difference; /* blanco se vuelve negro sobre fondos claros */
+  mix-blend-mode: difference;
 }
 .hamburger.active span:nth-child(1){ transform: rotate(45deg) translate(5px,5px); }
 .hamburger.active span:nth-child(2){ opacity:0; }
@@ -308,17 +305,13 @@ footer { padding:20px; background:#131313; text-align:center; }
   left: 0;
   width: 100%;
   height: 100%;
-  display: flex; /* usamos flex siempre, controlamos con opacity */
+  display: flex;
   align-items: center;
   justify-content: center;
   z-index: 99999;
   padding: 30px;
-
-  /* Fondo oscuro con desenfoque */
   backdrop-filter: blur(8px);
   background: rgba(0, 0, 0, 0.65);
-
-  /* Animación suave */
   opacity: 0;
   visibility: hidden;
   transition: opacity 0.35s ease, visibility 0.35s ease;
@@ -338,10 +331,8 @@ footer { padding:20px; background:#131313; text-align:center; }
   display: flex;
   align-items: center;
   justify-content: center;
-  touch-action: none; /* para drag/gestos */
+  touch-action: none;
   border-radius: 10px;
-
-  /* Animación de escala */
   transform: scale(0.95);
   opacity: 0;
   transition: transform 0.35s ease, opacity 0.35s ease;
@@ -359,11 +350,11 @@ footer { padding:20px; background:#131313; text-align:center; }
   display: block;
   border-radius: 8px;
   transform-origin: center center;
-  background: #000; /* útil para vídeos */
+  background: #000;
 }
 
 .popart-controls {
-  position: absolute;  /* antes estaba fixed */
+  position: absolute;
   top: 5%;
   right: 6%;
   z-index: 1000;
@@ -384,11 +375,52 @@ footer { padding:20px; background:#131313; text-align:center; }
 
 .popart-controls button:hover {
   transform: scale(1.1);
-    background: rgba(20, 20, 20, 0.363);
-
+  background: rgba(20, 20, 20, 0.363);
 }
+
 /* Eliminamos el caption */
 .popart-caption { display: none !important; }
+
+/* MEDIA QUERY: MÓVIL */
+@media (max-width: 768px) {
+  .popart-content {
+    max-width: 95%;
+    max-height: 90vh;
+    padding: 12px;
+  }
+
+  /* Galería en 1 columna */
+  .gallery, .gallery1, .gallery2 {
+    grid-template-columns: 1fr;
+  }
+
+  /* Items grandes se ajustan a 1 fila/columna */
+  .gallery-item.big, .gallery-item.big1, .gallery-item.vertical-big {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
@@ -585,32 +617,4 @@ footer { padding:20px; background:#131313; text-align:center; }
 .btn:hover {
   background-color: #353535;
   transform: translateY(-2px);
-}
-
-/* Footer */
-footer {
-  padding: 30px 20px;
-  text-align: center;
-  background-color: #222;
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-  .about-text-container {
-    padding: 2rem 1rem;
-  }
-
-  .skills-list {
-    justify-content: center;
-  }
-
-  .about-text-container h2 {
-    font-size: 2rem;
-  }
-
-  .about-text-container p,
-  .about-text-container ul li {
-    font-size: 1rem;
-  }
 }
