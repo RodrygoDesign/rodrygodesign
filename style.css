@@ -52,7 +52,7 @@ body::-webkit-scrollbar { display: none; }
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 15rem;
+  gap: 7rem;
   transition: transform 0.1s;
 }
 
@@ -65,30 +65,10 @@ body::-webkit-scrollbar { display: none; }
   position: relative;
   z-index: 3;
   transition: 0.2s;
-  top: 0px;
+  botton: 100px;
 }
 .hero-text1 h3:hover{ transform: scale(1.02); }
 
-/* Botón styled */
-.cards-button { display: flex; justify-content: center; margin-top: 10rem; z-index: 3; }
-.btn-link {
-  background-color: #202020ee;
-  color: #ddd;
-  font-size: 1rem;
-  padding: 12px 30px;
-  border: none;
-  border-radius: 12px;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  font-family: 'Poppins', sans-serif;
-  font-weight: 600;
-  text-decoration: none;
-}
-.btn-link:hover {
-  background-color: #7ad9ff;
-  color: #202020ee;
-  transform: scale(0.97);
-}
 
 /* HAMBURGER */
 .hamburger {
@@ -618,3 +598,4 @@ footer { padding:20px; background:#131313; text-align:center; }
   background-color: #353535;
   transform: translateY(-2px);
 }
+
