@@ -1,107 +1,385 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rodrygo Design Portfolio</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rodrygo Design Web</title>
-        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU7RU56gRoZXk3fcyAD8eQokH1MU3LL2gTqtN" crossorigin="anonymous">
-        <link rel="stylesheet" media="all" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="icon" type="image/png" href="iconogtavi.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <script src="js/script.js"></script>
-    </head>
+<!-- Estilos -->
+<link rel="stylesheet" href="style.css">
 
-    <body>
-        <nav>
-            <div><a href="index.html" class="logo">Rᵈ</a></div>
-            <div class="toggle">&#9776;</div>
-            <ul>
-                <li><a href="index.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a class="download-btn" href="cv_rodrigo_seco.pdf" target="_blank">Download CV</a></li>
-            </ul>
-        </nav> 
+<!-- Font Awesome + Google Fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <script>
-            const toggle = document.querySelector('.toggle');
-            const menu = document.querySelector('nav ul');
-            
-            toggle.addEventListener('click', () => {
-                menu.classList.toggle('active');
-            });
-        </script>
-            
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="slide"><img src="img/4.png" alt="Imagen 1"></div>
-            <div class="slide"><img src="img/5.gif" alt="Imagen 2"></div>
-            <div class="slide"><img src="img/2.png" alt="Imagen 3"></div>
-            <div class="slide"><img src="img/6.png" alt="Imagen 4"></div>
-            <div class="slide"><img src="img/3.png" alt="Imagen 5"></div>
+<!-- Model Viewer -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<!-- ICONO HAMBURGER -->
+<div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- LANG SWITCHER -->
+<div class="lang-switcher" id="lang-switcher" title="Cambiar idioma">
+    <img src="bandera-es.svg" alt="Idioma" id="current-flag">
+</div>
+
+<!-- MENÚ LATERAL -->
+<div class="sidebar" id="sidebar" role="navigation" aria-hidden="true">
+    <ul>
+        <li><a data-es="Inicio" data-en="Home" href="#">Inicio</a></li>
+        <li><a data-es="Sobre Mí" data-en="About Me" href="about.html">Sobre Mí</a></li>
+        <li><a data-es="Proyectos" data-en="Projects" href="#sections">Proyectos</a></li>
+        <li class="sidebar-download"><a data-es="Descargar CV" data-en="Download CV" href="cv_rodrigo_seco.pdf" target="_blank">Descargar CV</a></li>
+    </ul>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="model3d" aria-hidden="true">
+    <model-viewer
+      src="rodrygo.glb"
+      alt="Rodrygo 3D model"
+      auto-rotate
+      disable-zoom
+      camera-orbit="0deg 90deg 3m"
+      exposure="1"
+      environment-image="neutral"
+      style="width: 100%; height: 100%; background: none;">
+    </model-viewer>
+  </div>
+
+  <div class="hero-text1">
+    <div class="hero-text-inner">
+      <h3 data-es="P O R T F O L I O" data-en="P O R T F O L I O">P O R T F O L I O</h3>
+    </div>
+    <div class="cards-button">
+      <a id="btn-ver-proyectos" class="btn-link" data-es="PROYECTOS" data-en="PROJECTS" href="#sections">PROYECTOS</a>
+    </div>
+  </div>
+</section>
+
+<!-- Carrusel de Secciones -->
+<section class="sections-carousel">
+  <div class="carousel">
+    <div class="carousel-track">
+      <div class="carousel-item" data-es="Diseño 3D" data-en="3D Design">Diseño 3D</div>
+      <div class="carousel-item" data-es="Animación" data-en="Animation">Animación</div>
+      <div class="carousel-item" data-es="Branding" data-en="Branding">Branding</div>
+      <div class="carousel-item" data-es="Audiovisuales" data-en="Audiovisuals">Audiovisuales</div>
+      <div class="carousel-item" data-es="Renders" data-en="Renders">Renders</div>
+      <div class="carousel-item" data-es="Editorial" data-en="Editorial">Editorial</div>
+      <div class="carousel-item" data-es="Mockups" data-en="Mockups">Mockups</div>
+      <div class="carousel-item" data-es="Modelado 3D" data-en="3D Modeling">Modelado 3D</div>
+      <div class="carousel-item" data-es="Animación 3D" data-en="3D Animation">Animación 3D</div>
+      <div class="carousel-item" data-es="Motion Graphics" data-en="Motion Graphics">Motion Graphics</div>
+      <div class="carousel-item" data-es="Redes Sociales" data-en="Social Media">Redes Sociales</div>
+    </div>
+  </div>
+</section>
+
+<!-- Resumen Proyectos -->
+<section class="features-section" id="sections">
+  <div class="container-cards-feature">
+
+    <div class="card-feature reveal-right">
+      <div class="feature-block right-img">
+        <img src="img/loggo_nuevecomanueve_slider_inicio-2.gif" alt="Nuevecomanueve" />
+        <div class="feature-text">
+          <h3 data-es="Nuevecomanueve | Agencia Creativa" data-en="Nuevecomanueve | Creative Agency">Nuevecomanueve | Agencia Creativa</h3>
+          <p data-es="Enero 2024 – Marzo 2024 (prácticas) | Septiembre 2024 – Noviembre 2024" data-en="January 2024 – March 2024 (internship) | September 2024 – November 2024">Enero 2024 – Marzo 2024 (prácticas) | Septiembre 2024 – Noviembre 2024</p>
+          <ul>
+            <li data-es="Diseño y maquetación de catálogos impresos y digitales." data-en="Design and layout of printed and digital catalogs.">Diseño y maquetación de catálogos impresos y digitales.</li>
+            <li data-es="Creación de contenido audiovisual y animaciones para redes sociales." data-en="Creation of audiovisual content and animations for social media.">Creación de contenido audiovisual y animaciones para redes sociales.</li>
+            <li data-es="Desarrollo de mockups y renders 3D para presentaciones profesionales." data-en="Development of mockups and 3D renders for professional presentations.">Desarrollo de mockups y renders 3D para presentaciones profesionales.</li>
+            <li data-es="Producción de animaciones gráficas y diseño editorial." data-en="Production of graphic animations and editorial design.">Producción de animaciones gráficas y diseño editorial.</li>
+            <li data-es="Implementación de sitios web con WordPress y HTML + CSS." data-en="Website implementation with WordPress and HTML + CSS.">Implementación de sitios web con <strong>WordPress</strong> y <strong>HTML + CSS</strong>.</li>
+          </ul>
+          <p data-es="Esta etapa me permitió fortalecer mi perfil como diseñador multidisciplinar, combinando creatividad y funcionalidad en cada proyecto." data-en="This stage allowed me to strengthen my profile as a multidisciplinary designer, combining creativity and functionality in each project.">Esta etapa me permitió fortalecer mi perfil como <strong>diseñador multidisciplinar</strong>, combinando creatividad y funcionalidad en cada proyecto.</p>
         </div>
-        <div class="dots">
-            <span class="dot" data-index="0"></span>
-            <span class="dot" data-index="1"></span>
-            <span class="dot" data-index="2"></span>
-            <span class="dot" data-index="3"></span>
-            <span class="dot" data-index="4"></span>
-        </div>
-    <script src="script.js"></script>
+      </div>
     </div>
 
-    <div class="novedades">
-        <a href="project_sporting_dolores.html">
-            <img src="img/novedad_3.png" alt="Novedad 3">
-        </a>
-        <a href="project_ander_rea.html">
-            <img src="img/novedad_1.png" alt="Novedad 1">
-        </a>
-        <a href="project_logo_animation.html">
-            <img src="img/novedad_5.png" alt="Novedad 5">
-        </a>
-
-        <a href="project_motion_graphics.html">
-            <img src="img/novedad_8.png" alt="Novedad 9">
-        </a>
-        <a href="project_star_wars.html">
-            <img src="img/novedad_4.png" alt="Novedad 4">
-        </a>
-        <a href="project_cs2_skins.html">
-            <img src="img/novedad_7.png" alt="Novedad 7">
-        </a>
-
-        <a href="project_lollipop_lyrics.html">
-            <img src="img/novedad_6.png" alt="Novedad 6">
-        </a>
-        <a href="project_medusafest.html">
-            <img src="img/novedad_9.png" alt="Novedad 8">
-        </a>
-        <a href="project_perspectiva_3d.html">
-            <img src="img/novedad_2.png" alt="Novedad 2">
-        </a>
+    <div class="card-feature reveal-left">
+      <div class="feature-block left-img">
+        <img src="img/proyectos/logo_animation/ole_2_sinfondo.gif" alt="Colaboraciones" />
+        <div class="feature-text">
+          <h3 data-es="Colaboraciones" data-en="Collaborations">Colaboraciones</h3>
+          <p data-es="He tenido el privilegio de trabajar junto a marcas y clientes como: Olé, Grupo Gea Perona, Ecolux, IA Robotics, Palmeral Orihuela, EASDO. Desarrollando así propuestas visuales innovadoras que potencian la identidad de cada proyecto y generan un impacto más sólido en el mercado." data-en="I have had the privilege of working with brands and clients such as: Olé, Grupo Gea Perona, Ecolux, IA Robotics, Palmeral Orihuela, EASDO. Developing innovative visual proposals that enhance the identity of each project and create a stronger market impact.">He tenido el privilegio de trabajar junto a marcas y clientes como: <strong>Olé, Grupo Gea Perona, Ecolux, IA Robotics, Palmeral Orihuela, EASDO.</strong> Desarrollando así propuestas visuales innovadoras que potencian la identidad de cada proyecto y generan un impacto más sólido en el mercado.</p>
+        </div>
+      </div>
     </div>
-    
-    <hr>
-    <footer>
-        <div class="footer-social">
-                <a href="https://www.instagram.com/rodrygodesign/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/KomeL_oficial" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" aria-label="Telegram">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
+
+  </div>
+</section>
+
+<!-- GALERÍA DE PROYECTOS -->
+<section class="gallery">
+  <div class="gallery-item big">
+    <img src="img/proyectos/fgp/Logo_GRUPO_FGP_animado-compressed.gif" alt="Proyecto 1">
+  </div>
+  <div class="gallery-item">
+    <img src="img/proyectos/logo_animation/ole_2.gif" alt="Proyecto 3">
+  </div>
+  <div class="gallery-item">
+    <img src="img/proyectos/logo_animation/el_palmeral_1.gif" alt="Proyecto 2">
+  </div>
+  <div class="gallery-item">
+    <img src="img/proyectos/IArobotics/Ia_robotics.gif" alt="Proyecto 4">
+  </div>
+  <div class="gallery-item">
+    <img src="img/proyectos/ecolux/ecolux_lighting_logo.png" alt="Proyecto 4">
+  </div>
+</section>
+
+<section class="features-section">
+  <div class="container-cards-feature">
+    <div class="card-feature reveal-left">
+      <div class="feature-block left-img">
+        <video loop autoplay muted playsinline src="img/proyectos/fgp/ilustracion_naftran_animado_1.mp4" aria-label="Ilustración animada Proyecto"></video>
+        <div class="feature-text">
+          <h3 data-es="Audiovisuales y Grafismos en movimiento" data-en="Audiovisuals And Motion Graphics">Audiovisuales y Grafismos en movimiento</h3>
+          <p data-es="A lo largo de mi carrera, he tenido el privilegio de conceptualizar y producir animaciones y motion graphics para una amplia variedad de proyectos: vídeos publicitarios, contenido creativo para YouTube y campañas promocionales de marcas como Grupo Gea Perona e IA Robotics. 🎬 Cada pieza está diseñada para transmitir de manera clara y efectiva la identidad de la marca, generando un impacto visual que conecta con el público y potencia la presencia de cada proyecto en su mercado. Además, integro técnicas de edición audiovisual, storytelling visual y diseño de gráficos en movimiento, garantizando resultados coherentes y de alta calidad en cada producción."
+   data-en="Throughout my career, I have had the privilege of conceptualizing and producing animations and motion graphics for a wide range of projects: advertising videos, creative YouTube content, and promotional campaigns for brands such as Grupo Gea Perona and IA Robotics. 🎬 Each piece is crafted to clearly and effectively convey the brand identity, creating a visual impact that engages audiences and strengthens the market presence of each project. Additionally, I incorporate audiovisual editing, visual storytelling, and motion graphics design techniques, ensuring consistent and high-quality results in every production.">
+  A lo largo de mi carrera, he tenido el privilegio de conceptualizar y producir animaciones y motion graphics para una amplia variedad de proyectos: vídeos publicitarios, contenido creativo para YouTube y campañas promocionales de marcas como Grupo Gea Perona e IA Robotics. 🎬 Cada pieza está diseñada para transmitir de manera clara y efectiva la identidad de la marca, generando un impacto visual que conecta con el público y potencia la presencia de cada proyecto en su mercado. Además, integro técnicas de edición audiovisual, storytelling visual y diseño de gráficos en movimiento, garantizando resultados coherentes y de alta calidad en cada producción.
+</p>
+
         </div>
-        <div class="footer-text">
-                &copy; 2025 Rodrygo Design. All rights reserved.
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERÍA PRINCIPAL DE VIDEOS -->
+  <section class="gallery2">
+    <div class="gallery-item big1">
+      <video loop autoplay muted playsinline src="img/proyectos/fgp/grupo_gea_perona_PresentacionCorp_comprimido.mp4" aria-label="Presentación Grupo Gea Perona"></video>
+    </div>
+  </section>
+   <section class="gallery1">
+    <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/fgp/ilustracion_cringas_animado_1.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+    <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/fgp/ilustracion_hidrona_animado_1.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+        <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/fgp/ilustracion_hynology_animado_1.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+    <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/fgp/ilustracion_naftran_animado_1.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+  </section>
+
+<section class="gallery2">
+    <div class="gallery-item big1">
+      <video loop autoplay muted playsinline src="img/proyectos/motion_graphics/apocalipsis nuclear.mp4" aria-label="Apocalipsis nuclear"></video>
+    </div>
+    <div class="gallery-item big1">
+      <video loop autoplay muted playsinline src="img/proyectos/medusa_fest/medusa_fest_promo.mp4" aria-label="Medusa Fest Promo"></video>
+    </div>
+  </section>
+</section>
+
+   <section class="gallery1">
+    <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/IArobotics/jarvis.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+    <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/IArobotics/Jarvis_chat_animado_comprimido.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+  </section>
+
+
+<section class="features-section">
+  <div class="container-cards-feature1">
+    <div class="card-feature reveal-right">
+      <div class="feature-block right-img">
+        <iframe class="hero-model1"
+            title="AK-47 Next Gen" 
+            src="https://sketchfab.com/models/0a1d2d80f17b4b90955f73403a6bb57e/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+            frameborder="0" 
+            allow="autoplay; fullscreen; xr-spatial-tracking"
+            allowvr="false">
+        </iframe>
+
+        <div class="feature-text">
+          <h3 data-es="Proyectos 3D y Producción Visual" data-en="3D Projects & Visual Production">Proyectos 3D y Producción Visual</h3>
+          <p data-es="En mis proyectos personales de 3D he explorado ámbitos como la creación de cinemáticas, renders fotorrealistas y el modelado y texturizado de objetos tridimensionales. Estas piezas no solo demuestran un dominio técnico, sino también su aplicabilidad en entornos profesionales, como la personalización de skins en videojuegos (ejemplo: Counter-Strike 2), el desarrollo de recursos para experiencias interactivas o la producción de materiales audiovisuales destinados a publicidad y medios digitales. Gracias a estas experiencias, he adquirido una visión sólida sobre cómo integrar el 3D en el mercado actual y generar propuestas creativas que aporten valor tanto en la industria del entretenimiento como en el ámbito comercial."
+            data-en="In my personal 3D projects, I have explored areas such as cinematic creation, photorealistic rendering, and 3D modeling and texturing. These works not only showcase technical expertise but also their applicability in professional environments, such as customizing skins for video games (e.g., Counter-Strike 2), developing assets for interactive experiences, or producing audiovisual materials for advertising and digital media. Through these experiences, I have built a strong vision of how to integrate 3D into today’s market and create innovative proposals that add value in both the entertainment industry and the commercial sector.">
+            En mis proyectos personales de 3D he explorado ámbitos como la creación de cinemáticas, renders fotorrealistas y el modelado y texturizado de objetos tridimensionales. Estas piezas no solo demuestran un dominio técnico, sino también su aplicabilidad en entornos profesionales, como la personalización de skins en videojuegos (ejemplo: Counter-Strike 2), el desarrollo de recursos para experiencias interactivas o la producción de materiales audiovisuales destinados a publicidad y medios digitales. Gracias a estas experiencias, he adquirido una visión sólida sobre cómo integrar el 3D en el mercado actual y generar propuestas creativas que aporten valor tanto en la industria del entretenimiento como en el ámbito comercial.
+          </p>
         </div>
-    </footer>
-        
+      </div>
+    </div>
+  </div>
+
+  <!-- GALERÍA DE 3D / VIDEOS -->
+  <section class="gallery1">
+    <div class="gallery-item vertical-big">
+      <video autoplay muted loop playsinline src="img/proyectos/3d-caballero/0001.mp4" aria-label="Proyecto 3D 1"></video>
+    </div>
+    <div class="gallery-item">
+      <img src="img/proyectos/perspectiva_3d/render interior 1.png" alt="Render interior">
+    </div>
+    <div class="gallery-item">
+      <video autoplay muted loop playsinline src="img/proyectos/star_wars/vid_2.mp4" aria-label="Star Wars vid 2"></video>
+    </div>
+    <div class="gallery-item">
+      <video autoplay muted loop playsinline src="img/proyectos/star_wars/vid_3.mp4" aria-label="Star Wars vid 3"></video>
+    </div>
+    <div class="gallery-item big">
+      <video autoplay muted loop playsinline src="img/proyectos/perspectiva_3d/lambo.mp4" aria-label="Lambo"></video>
+    </div>
+    <div class="gallery-item">
+      <video autoplay muted loop playsinline src="img/proyectos/star_wars/vid_1.mp4" aria-label="Star Wars vid 1"></video>
+    </div>
+  </section>
+</section>
+
+  <div class="container-cards">
+    <!-- Cards con iframes 3D -->
+    <div class="card reveal">
+      <div class="badge">Texturizado</div>
+      <h2 data-es="Ak-47" data-en="Ak-47">Ak-47</h2>
+      <div class="card-model3d-wrapper">
+        <iframe class="card-model3d"
+          title="AK-47 Next Gen" 
+          src="https://sketchfab.com/models/924da52e253642f7a89b2fbca1aaceaa/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowvr="false">
+        </iframe>
+        <div class="card-model3d-overlay"></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">Texturizado</div>
+      <h2 data-es="M4A4" data-en="M4A4">M4A4</h2>
+      <div class="card-model3d-wrapper">
+        <iframe class="card-model3d"
+          title="M4A4" 
+          src="https://sketchfab.com/models/6c9071e27071425684607bd0091246ad/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowvr="false">
+        </iframe>
+        <div class="card-model3d-overlay"></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">Texturizado</div>
+      <h2 data-es="Tec-9" data-en="Tec-9">Tec-9</h2>
+      <div class="card-model3d-wrapper">
+        <iframe class="card-model3d"
+          title="Tec-9" 
+          src="https://sketchfab.com/models/0a1d2d80f17b4b90955f73403a6bb57e/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowvr="false">
+        </iframe>
+        <div class="card-model3d-overlay"></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">Modelado y texturizado</div>
+      <h2 data-es="Cafetera" data-en="Coffee Maker">Cafetera</h2>
+      <div class="card-model3d-wrapper">
+        <iframe class="card-model3d"
+          title="Cafetera" 
+          src="https://sketchfab.com/models/82c3aca7bb1a47a0a6eb81dec04cb6f6/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowvr="false">
+        </iframe>
+        <div class="card-model3d-overlay"></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">Modelado y texturizado</div>
+      <h2 data-es="Lata de Refresco" data-en="Can of Soda">Lata de Refresco</h2>
+      <div class="card-model3d-wrapper">
+        <iframe class="card-model3d"
+          title="Lata-refresco" 
+          src="https://sketchfab.com/models/b78318034a0d44ceaa60e6550048b3a8/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowvr="false">
+        </iframe>
+        <div class="card-model3d-overlay"></div>
+      </div>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">Modelado y texturizado</div>
+      <h2 data-es="Pinza de Madera" data-en="Wooden Clothespin">Pinza de Madera</h2>
+      <div class="card-model3d-wrapper">
+        <iframe class="card-model3d"
+          title="Pinza de madera" 
+          src="https://sketchfab.com/models/650fa932a3a343e2bcd05745b89e848d/embed?autospin=0.1&autostart=1&ui_controls=0&ui_infos=0&ui_stop=0&transparent=1" 
+          frameborder="0" 
+          allow="autoplay; fullscreen; xr-spatial-tracking"
+          allowvr="false">
+        </iframe>
+        <div class="card-model3d-overlay"></div>
+      </div>
+    </div>
+  </div>
+
+
+
+<section id="cards-section">
+  <div class="container-cards">
+    <div class="card reveal">
+      <div class="badge">💙</div>
+      <h2 data-es="Pasión Creativa" data-en="Creative Passion">Pasión Creativa</h2>
+      <p data-es='"La creatividad es el motor de todo lo que hago. Cada proyecto, cada diseño y cada idea nace de un profundo compromiso por transmitir emociones y conectar con las personas a través del arte visual."' data-en='"Creativity is the driving force behind everything I do. Each project, each design, and each idea comes from a deep commitment to convey emotions and connect with people through visual art."'>"La creatividad es el motor de todo lo que hago. Cada proyecto, cada diseño y cada idea nace de un profundo compromiso por transmitir emociones y conectar con las personas a través del arte visual."</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">🌊</div>
+      <h2 data-es="Adaptabilidad" data-en="Adaptability">Adaptabilidad</h2>
+      <p data-es='"Como el agua, me adapto a nuevos retos y flujos de trabajo con facilidad. Aprender, evolucionar y ajustar mi enfoque según las circunstancias me permite entregar soluciones visuales elegantes y efectivas en cualquier contexto."' data-en='"Like water, I adapt to new challenges and workflows easily. Learning, evolving, and adjusting my approach according to circumstances allows me to deliver elegant and effective visual solutions in any context."'>"Como el agua, me adapto a nuevos retos y flujos de trabajo con facilidad. Aprender, evolucionar y ajustar mi enfoque según las circunstancias me permite entregar soluciones visuales elegantes y efectivas en cualquier contexto."</p>
+    </div>
+
+    <div class="card reveal">
+      <div class="badge">🚀</div>
+      <h2 data-es="Ambición" data-en="Ambition">Ambición</h2>
+      <p data-es='"La ambición me impulsa a superarme día tras día, explorando nuevas técnicas y conocimientos. Cada proyecto es una oportunidad de elevar mi creatividad y alcanzar niveles más altos de innovación y excelencia."' data-en='"Ambition drives me to surpass myself every day, exploring new techniques and knowledge. Each project is an opportunity to elevate my creativity and reach higher levels of innovation and excellence."'>"La ambición me impulsa a superarme día tras día, explorando nuevas técnicas y conocimientos. Cada proyecto es una oportunidad de elevar mi creatividad y alcanzar niveles más altos de innovación y excelencia."</p>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="footer-social">
+        <a href="https://www.instagram.com/rodrygodesign/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/KomeL_oficial" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Rodrygo Design. All rights reserved.</p>
+</footer>
+
+
+
+<!-- POP-ART LIGHTBOX (hidden initially) -->
+<div id="lightbox" class="popart-lightbox" aria-hidden="true" role="dialog" aria-label="Visor de medios">
+  <div class="popart-controls">
+    <button id="lb-close" aria-label="Cerrar visor" title="Cerrar">✕</button>
+  </div>
+  <div id="lightbox-content" class="popart-content" tabindex="0"></div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>

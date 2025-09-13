@@ -1,78 +1,120 @@
 <!DOCTYPE html>
 <html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Rodrygo Design Portfolio</title>
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Rodrygo Design Web</title>
-        <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMU7RU56gRoZXk3fcyAD8eQokH1MU3LL2gTqtN" crossorigin="anonymous">
-        <link rel="stylesheet" media="all" href="style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <link rel="icon" type="image/png" href="iconogtavi.png">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-        <script src="js/script.js"></script>
-    </head>
+<!-- Estilos -->
+<link rel="stylesheet" href="style.css">
 
-    <body>
-        <nav>
-            <div><a href="index.html" class="logo">Rᵈ</a></div>
-            <div class="toggle">&#9776;</div>
-            <ul>
-                <li><a href="index.html">Projects</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li><a class="download-btn" href="cv_rodrigo_seco.pdf" target="_blank">Donwolad CV</a></li>
-            </ul>
-        </nav> 
+<!-- Font Awesome + Google Fonts -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
 
-        <script>
-            const toggle = document.querySelector('.toggle');
-            const menu = document.querySelector('nav ul');
-            
-            toggle.addEventListener('click', () => {
-                menu.classList.toggle('active');
-            });
-        </script>
-        
-        <div class="carousel-container">
-            <div class="carousel">
-                <div class="slide"><img src="img/foto.png" alt="Imagen 1"></div>
-            </div>
-        </div>
-        
-        <div class="container">
-            <div class="text-content">
-                <h1></h1>
-                <h1>¡Welcome!</h1>
-                <p>I am Rodrigo Seco Fiastre, a spanish certified graphic designer with expertise in a wide range of creative disciplines. These include 
-                <a>Brand Creation</a>, <a>Audio-Visual Design</a>, <a>3D model</a>, <a>Renders</a>, <a>Motion Graphics</a>, <a>Visual Identity</a>, and 
-                <a>Editorial Design</a>. Additionally, I specialize in managing and designing content for social media, as well as in web development and design using HTML and CSS.</p>
-                <p>I was born in Murcia on December 27, 2001. I spent 10 years living in Madrid before moving to Alicante at the age of 16, where I completed 
-                    my artistic baccalaureate at the IES El Palmeral high school in Orihuela. Afterward, I pursued a higher degree in graphic design at the 
-                    Escuela de Arte Superior y Diseño de Orihuela (EASDO).</p>
-                <p>Upon completing my education, I began my professional career working as a freelance designer for various clients, as well as collaborating 
-                    with the digital marketing agency Nuevecomanueve (NCN) in Orihuela.</p>
-            </div>
-        </div>
-        
-    <hr>
-    <footer>
-        <div class="footer-social">
-                <a href="https://www.instagram.com/rodrygodesign/" target="_blank" aria-label="Instagram">
-                    <i class="fab fa-instagram"></i>
-                </a>
-                <a href="https://x.com/KomeL_oficial" target="_blank" aria-label="Twitter">
-                    <i class="fab fa-twitter"></i>
-                </a>
-                <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" aria-label="Telegram">
-                    <i class="fab fa-whatsapp"></i>
-                </a>
-        </div>
-        <div class="footer-text">
-                &copy; 2025 Rodrygo Design. All rights reserved.
-        </div>
-    </footer>
-        
+<!-- Model Viewer -->
+<script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+</head>
+<body>
+
+<!-- ICONO HAMBURGER -->
+<div class="hamburger" id="hamburger" aria-label="Abrir menú" role="button" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+
+<!-- LANG SWITCHER -->
+<div class="lang-switcher" id="lang-switcher" title="Cambiar idioma">
+    <img src="bandera-es.svg" alt="Idioma" id="current-flag">
+</div>
+
+<!-- MENÚ LATERAL -->
+<div class="sidebar" id="sidebar" role="navigation" aria-hidden="true">
+    <ul>
+        <li><a data-es="Inicio" data-en="Home" href="index.html">Inicio</a></li>
+        <li><a data-es="Sobre Mí" data-en="About Me" href="about.html">Sobre Mí</a></li>
+        <li><a data-es="Proyectos" data-en="Projects" href="index.html">Proyectos</a></li>
+        <li class="sidebar-download"><a data-es="Descargar CV" data-en="Download CV" href="cv_rodrigo_seco.pdf" target="_blank">Descargar CV</a></li>
+    </ul>
+</div>
+
+<!-- Overlay -->
+<div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
+
+<!-- SOBRE MÍ -->
+<section id="about" class="about-section">
+  <div class="about-image-fullscreen">
+    <img src="img/foto.png" alt="Rodrygo Design" data-es="Rodrygo Design" data-en="Rodrygo Design" />
+  </div>
+
+  <!-- Texto sobre mí -->
+<div class="about-text-container">
+  <!-- Nombre y título -->
+  <h2></h2>
+
+  <!-- Introducción -->
+  <p data-es="Hola! Soy Rodrigo Seco Fiastre, diseñador gráfico titulado con pasión por la creatividad en todas sus formas. 💡 Mi experiencia abarca creación de marca, diseño audiovisual, modelado 3D, renders, motion graphics, identidad visual y diseño editorial. Además, me especializo en gestión y diseño de contenido para redes sociales y desarrollo web con HTML y CSS."
+     data-en="Hello! I'm Rodrigo Seco Fiastre, a certified graphic designer passionate about creativity in all forms. 💡 My expertise includes brand creation, audio-visual design, 3D modeling, renders, motion graphics, visual identity, and editorial design. I also specialize in social media content management and web development using HTML & CSS.">
+    Hola! Soy <strong>Rodrigo Seco Fiastre</strong>, diseñador gráfico titulado con pasión por la creatividad en todas sus formas. 💡 Mi experiencia abarca creación de marca, diseño audiovisual, modelado 3D, renders, motion graphics, identidad visual y diseño editorial. Además, me especializo en gestión y diseño de contenido para redes sociales y desarrollo web con HTML y CSS.
+  </p>
+
+  <!-- Datos personales -->
+  <p data-es="Nací en Murcia el 27 de diciembre de 2001. Viví 10 años en Madrid antes de mudarme a Alicante a los 16, donde completé el Bachillerato Artístico en el IES El Palmeral de Orihuela. Posteriormente cursé el Grado Superior en Diseño Gráfico en la Escuela de Arte Superior y Diseño de Orihuela (EASDO)."
+     data-en="I was born in Murcia on December 27, 2001. I spent 10 years in Madrid before moving to Alicante at 16, where I completed the Artistic Baccalaureate at IES El Palmeral in Orihuela. Later, I pursued a Higher Degree in Graphic Design at the Escuela de Arte Superior y Diseño de Orihuela (EASDO).">
+    Nací en <strong>Murcia</strong> el 27 de diciembre de 2001. Viví 10 años en Madrid antes de mudarme a Alicante a los 16, donde completé el Bachillerato Artístico en el IES El Palmeral de Orihuela. Posteriormente cursé el Grado Superior en Diseño Gráfico en la Escuela de Arte Superior y Diseño de Orihuela (EASDO).
+  </p>
+
+  <!-- Experiencia profesional -->
+  <p data-es="Tras finalizar mis estudios, inicié mi carrera profesional como freelance, colaborando con diversos clientes y con la agencia de marketing digital Nuevecomanueve (NCN) en Orihuela. 🚀 Aquí combiné creatividad y estrategia para proyectos reales, fortaleciendo mis habilidades en diseño y comunicación."
+     data-en="After finishing my studies, I started my professional career as a freelance designer, collaborating with various clients and with the digital marketing agency Nuevecomanueve (NCN) in Orihuela. 🚀 There I combined creativity and strategy for real projects, enhancing my skills in design and communication.">
+    Tras finalizar mis estudios, inicié mi carrera profesional como <strong>freelance</strong>, colaborando con diversos clientes y con la agencia de marketing digital <strong>Nuevecomanueve (NCN)</strong> en Orihuela. 🚀 Aquí combiné creatividad y estrategia para proyectos reales, fortaleciendo mis habilidades en diseño y comunicación.
+  </p>
+
+  <!-- Experiencia laboral y académica -->
+  <h3 data-es="Experiencia y Formación" data-en="Experience & Education">Experiencia y Formación</h3>
+  <ul>
+    <li data-es="IES El Palmeral, Orihuela - Bachillerato Artístico" data-en="IES El Palmeral, Orihuela - Artistic Baccalaureate">IES El Palmeral, Orihuela - Bachillerato Artístico</li>
+    <li data-es="Escuela de Arte Superior y Diseño de Orihuela (EASDO) - Grado Superior en Diseño Gráfico" data-en="Escuela de Arte Superior y Diseño de Orihuela (EASDO) - Higher Degree in Graphic Design">Escuela de Arte Superior y Diseño de Orihuela (EASDO) - Grado Superior en Diseño Gráfico</li>
+    <li data-es="Nuevecomanueve | Agencia creativa - Colaboraciones temporales y prácticas (2024)" data-en="Nuevecomanueve | Creative agency - Temporary collaborations and internships (2024)">Nuevecomanueve | Agencia creativa - Colaboraciones temporales y prácticas (2024)</li>
+  </ul>
+</div>
+
+
+
+    <!-- Skills con iconos -->
+    <ul class="skills-list">
+      <li><i class="fas fa-paint-brush"></i> <span data-es="Diseño Gráfico" data-en="Graphic Design">Diseño Gráfico</span></li>
+      <li><i class="fas fa-laptop-code"></i> <span data-es="Diseño Web" data-en="Web Design">Diseño Web</span></li>
+      <li><i class="fas fa-cube"></i> <span data-es="Modelos 3D" data-en="3D Modeling">Modelos 3D</span></li>
+      <li><i class="fas fa-lightbulb"></i> <span data-es="Creatividad" data-en="Creativity">Creatividad</span></li>
+      <li><i class="fas fa-video"></i> <span data-es="Audiovisuales" data-en="Audiovisuals">Audiovisuales</span></li>
+    </ul>
+  </div>
+</section>
+
+
+
+
+<!-- Footer -->
+<footer>
+    <div class="footer-social">
+        <a href="https://www.instagram.com/rodrygodesign/" target="_blank" rel="noopener"><i class="fab fa-instagram"></i></a>
+        <a href="https://x.com/KomeL_oficial" target="_blank" rel="noopener"><i class="fab fa-twitter"></i></a>
+        <a href="https://wa.me/34601394354?text=Hello%20Rodrygo,%20I%20saw%20your%20portfolio!" target="_blank" rel="noopener"><i class="fab fa-whatsapp"></i></a>
+    </div>
+    <p>&copy; 2025 Rodrygo Design. All rights reserved.</p>
+</footer>
+
+
+
+<!-- POP-ART LIGHTBOX (hidden initially) -->
+<div id="lightbox" class="popart-lightbox" aria-hidden="true" role="dialog" aria-label="Visor de medios">
+  <div class="popart-controls">
+    <button id="lb-close" aria-label="Cerrar visor" title="Cerrar">✕</button>
+  </div>
+  <div id="lightbox-content" class="popart-content" tabindex="0"></div>
+</div>
+<script src="script.js"></script>
 </body>
 </html>
