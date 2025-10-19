@@ -59,7 +59,7 @@ body::-webkit-scrollbar { display: none; }
 /* Efecto hover */
 .navbar ul li a:hover {
   color: #696969;
-  transform: scale(1.15);
+  transform: scale(1.55);
 }
 
 
@@ -1455,3 +1455,4 @@ margin:0; font-size:1.4rem; color: #fff;
     border-radius: 10px;
   }
 }
+
