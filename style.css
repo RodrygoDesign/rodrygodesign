@@ -39,6 +39,7 @@ body::-webkit-scrollbar { display: none; }
   z-index: 2000;
 }
 
+
 /* Lista horizontal centrada */
 .navbar ul {
   display: flex;
@@ -53,13 +54,14 @@ body::-webkit-scrollbar { display: none; }
   color: #333333;
   text-decoration: none;
   font-size: .8rem;
-  transition: color 0.3s, transform 0.3s;
+  scale: 1;
+  transition: .3s;
 }
 
 /* Efecto hover */
 .navbar ul li a:hover {
-  color: #696969;
-  transform: scale(1.55);
+  color: #a7a7a7;
+  font-size: 1rem;
 }
 
 
@@ -1455,4 +1457,5 @@ margin:0; font-size:1.4rem; color: #fff;
     border-radius: 10px;
   }
 }
+
 
