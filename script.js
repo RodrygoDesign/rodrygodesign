@@ -128,84 +128,88 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  /* ==============================
-     LIGHTBOX
-  =============================== */
-  const lightbox = document.getElementById('lightbox');
-  const lightboxContent = document.getElementById('lightbox-content');
-  const lbClose = document.getElementById('lb-close');
-  let currentMedia = null;
+const lightbox = document.getElementById('lightbox');
+const lightboxContent = document.getElementById('lightbox-content');
+const lbClose = document.getElementById('lb-close');
+let currentMedia = null;
 
-  const openLightboxForImage = (src, alt = '') => {
-    lightboxContent.innerHTML = `<img src="${src}" alt="${alt}">`;
-    currentMedia = lightboxContent.querySelector('img');
-    showLightbox();
-  };
+const openLightboxForImage = (src, alt = '') => {
+  lightboxContent.innerHTML = `<img src="${src}" alt="${alt}" loading="lazy">`;
+  currentMedia = lightboxContent.querySelector('img');
+  showLightbox();
+};
 
-  const openLightboxForVideo = (src, ariaLabel = '') => {
-    const video = document.createElement('video');
-    video.src = src;
-    video.controls = true;
-    video.autoplay = true;
-    video.playsInline = true;
-    video.setAttribute('aria-label', ariaLabel);
-    video.style.maxHeight = '70vh';
-    lightboxContent.innerHTML = '';
-    lightboxContent.appendChild(video);
-    currentMedia = video;
-    showLightbox();
-  };
+const openLightboxForVideo = (src, ariaLabel = '') => {
+  const video = document.createElement('video');
+  video.src = src;
+  video.controls = true;
+  video.autoplay = true;
+  video.playsInline = true;
+  video.setAttribute('aria-label', ariaLabel);
+  video.style.maxHeight = '80vh';
+  lightboxContent.innerHTML = '';
+  lightboxContent.appendChild(video);
+  currentMedia = video;
+  showLightbox();
+};
 
-  const showLightbox = () => {
-    lightbox.classList.add('open');
-    lightbox.setAttribute('aria-hidden', 'false');
-    setTimeout(() => lightboxContent.focus(), 120);
-  };
+const showLightbox = () => {
+  lightbox.classList.add('open');
+  lightbox.setAttribute('aria-hidden', 'false');
+  document.body.style.overflow = 'hidden'; // evita scroll del fondo
+};
 
-  const closeLightbox = () => {
-    if (currentMedia?.tagName === 'VIDEO') currentMedia.pause();
-    lightbox.classList.remove('open');
-    lightbox.setAttribute('aria-hidden', 'true');
-    lightboxContent.innerHTML = '';
-    currentMedia = null;
-  };
+const closeLightbox = () => {
+  if (currentMedia?.tagName === 'VIDEO') currentMedia.pause();
+  lightbox.classList.remove('open');
+  lightbox.setAttribute('aria-hidden', 'true');
+  lightboxContent.innerHTML = '';
+  currentMedia = null;
+  document.body.style.overflow = ''; // restablece scroll
+};
 
-  lbClose.addEventListener('click', closeLightbox);
-  document.addEventListener('keydown', e => {
-    if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+lbClose.addEventListener('click', closeLightbox);
+
+document.addEventListener('keydown', e => {
+  if (e.key === 'Escape' && lightbox.classList.contains('open')) closeLightbox();
+});
+
+document.querySelectorAll('.gallery-item').forEach(item => {
+  item.addEventListener('click', () => {
+    const img = item.querySelector('img');
+    const vid = item.querySelector('video');
+
+    if (img) openLightboxForImage(img.src, img.alt || '');
+    else if (vid) openLightboxForVideo(vid.currentSrc || vid.src, vid.getAttribute('aria-label') || '');
   });
+});
 
-  document.querySelectorAll('.gallery-item').forEach(item => {
-    item.addEventListener('click', () => {
-      const img = item.querySelector('img');
-      const vid = item.querySelector('video');
-      const iframe = item.querySelector('iframe');
-
-      if (img) openLightboxForImage(img.src, img.alt || '');
-      else if (vid) openLightboxForVideo(vid.currentSrc || vid.src, vid.getAttribute('aria-label') || '');
-      else if (iframe) window.open(iframe.src, '_blank');
-    });
-  });
-
-  lightbox.addEventListener('click', e => { if (e.target === lightbox) closeLightbox(); });
+lightbox.addEventListener('click', e => {
+  if (e.target === lightbox) closeLightbox();
+});
 
   /* ==============================
      LAZY LOADING DE VIDEOS
   =============================== */
-  const videos = document.querySelectorAll('video[loading="lazy"]');
-  if ('IntersectionObserver' in window) {
-    const videoObserver = new IntersectionObserver((entries, obs) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.preload = 'auto';
-          obs.unobserve(entry.target);
-        }
-      });
-    }, { rootMargin: '200px' });
-    videos.forEach(video => videoObserver.observe(video));
-  } else {
-    videos.forEach(video => video.preload = 'auto');
-  }
+videos.forEach(video => {
+  // Reproducir en desktop con hover
+  video.addEventListener("mouseenter", () => video.play());
+  video.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+
+  // Reproducir o pausar al tocar/clickar
+  video.addEventListener("click", () => {
+    if (video.paused) {
+      video.play();
+    } else {
+      video.pause();
+      video.currentTime = 0;
+    }
+  });
+});
+
 
   /* ==============================
      ANIMACIÓN DE TEXTO
@@ -340,28 +344,3 @@ if (hero && canvas) {
 
 
 
-
-
-
-
-  // Seleccionamos todos los videos de la galería
-  const videos = document.querySelectorAll('.gallery-item video');
-
-  videos.forEach(video => {
-    // Reproduce al pasar el ratón
-    video.addEventListener('mouseenter', () => video.play());
-    video.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0; // vuelve al inicio
-    });
-
-    // Reproduce al tocar (para móviles)
-    video.addEventListener('touchstart', () => {
-      if (video.paused) {
-        video.play();
-      } else {
-        video.pause();
-        video.currentTime = 0;
-      }
-    });
-  });
