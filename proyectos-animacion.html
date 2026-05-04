@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Animaci&oacute;n &mdash; Rodrygo Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="proyectos.css" />
+</head>
+<body>
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav__logo">RD<span class="nav__logo-dot">.</span></a>
+    <ul class="nav__links"></ul>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir men&uacute;">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="fmenu" id="mobMenu" aria-hidden="true">
+    <div class="fmenu__left">
+      <div class="fmenu__top"><span class="fmenu__label">Men&uacute;</span></div>
+      <nav class="fmenu__nav">
+        <div class="fmenu__item" style="--i:0">
+          <a href="index.html#inicio" class="fmenu__link" data-preview="0">
+            <span class="fmenu__num">01</span><span class="fmenu__text">Inicio</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:1">
+          <a href="index.html#servicios" class="fmenu__link" data-preview="1">
+            <span class="fmenu__num">02</span><span class="fmenu__text">Servicios</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:2">
+          <a href="index.html#experiencia" class="fmenu__link" data-preview="2">
+            <span class="fmenu__num">03</span><span class="fmenu__text">Experiencia</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:3">
+          <a href="index.html#contacto" class="fmenu__link" data-preview="3">
+            <span class="fmenu__num">04</span><span class="fmenu__text">Contacto</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+      </nav>
+      <div class="fmenu__footer">
+        <a href="cv_rodrigo_seco.pdf" target="_blank" class="fmenu__cv" rel="noreferrer">Descargar CV &#8594;</a>
+        <div class="fmenu__socials">
+          <a href="https://instagram.com" target="_blank" class="fmenu__social" rel="noreferrer">IG</a>
+          <a href="https://linkedin.com/in/rodrigo-seco-fiastre-158207328" target="_blank" class="fmenu__social" rel="noreferrer">LI</a>
+          <a href="https://x.com" target="_blank" class="fmenu__social" rel="noreferrer">X</a>
+          <a href="https://wa.me/34601394354" target="_blank" class="fmenu__social" rel="noreferrer">WA</a>
+        </div>
+      </div>
+    </div>
+    <div class="fmenu__right">
+      <div class="fmenu__preview fmenu__preview--0 is-active">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Inicio</span>
+          <p class="fmenu__preview-copy">Dise&ntilde;ador multidisciplinar.<br />Conectando ideas con arte visual.</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--1">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Servicios</span>
+          <p class="fmenu__preview-copy">3D &middot; Animaci&oacute;n &middot; Branding<br />Web &middot; Audiovisuales</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--2">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Experiencia</span>
+          <p class="fmenu__preview-copy">Nuevecomanueve<br />Equipo de Comunicaci&oacute;n</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--3">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Contacto</span>
+          <p class="fmenu__preview-copy">&iquest;Tienes un proyecto?<br />Hablemos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="proj-hero proj-hero--media" style="--grad: linear-gradient(150deg,#090e21,#10183a,#080d20)">
+    <img class="proj-hero__media" src="img/proyectos/motion_graphics/apocalipsis%20nuclear.png" alt="" loading="eager" aria-hidden="true" />
+    <div class="proj-hero__inner container">
+      <a href="index.html#servicios" class="proj-back">&#8592; Volver</a>
+      <span class="proj-hero__num">02</span>
+      <h1 class="proj-hero__title">Animaci&oacute;n</h1>
+      <p class="proj-hero__desc">Animaciones 2D y motion graphics que combinan dise&ntilde;o visual con storytelling efectivo.</p>
+      <div class="proj-hero__tags">
+        <span>2D</span><span>Motion Graphics</span><span>Animaci&oacute;n 3D</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="proj-grid container">
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/motion_graphics/apocalipsis%20nuclear.png">
+        <source src="img/proyectos/motion_graphics/apocalipsis%20nuclear.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Motion graphics</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/fgp/Logo_GRUPO_FGP_animado-compressed.png">
+        <source src="img/proyectos/fgp/Logo_GRUPO_FGP_animado-compressed.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Logo FGP</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/logo_animation/ole_2.png">
+        <source src="img/proyectos/logo_animation/ole_2.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Brand motion</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/logo_animation/el_palmeral_1.png">
+        <source src="img/proyectos/logo_animation/el_palmeral_1.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Logo animation</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/IArobotics/iarobotics-logo.png">
+        <source src="img/proyectos/IArobotics/Ia_robotics.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">IA Robotics</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/fgp/fgp-presentacion.JPG">
+        <source src="img/proyectos/fgp/grupo_gea_perona_PresentacionCorp_comprimido.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Presentaci&oacute;n FGP</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/fgp/cringas-portada.png">
+        <source src="img/proyectos/fgp/ilustracion_cringas_animado_1.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Cringas animado</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/fgp/hidrona-portada.png">
+        <source src="img/proyectos/fgp/ilustracion_hidrona_animado_1.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Hidrona animado</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/fgp/hynology-portada.png">
+        <source src="img/proyectos/fgp/ilustracion_hynology_animado_1.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Hynology animado</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/fgp/naftran-portada.png">
+        <source src="img/proyectos/fgp/ilustracion_naftran_animado_1.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Naftran animado</span>
+    </figure>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">RD<span class="nav__logo-dot">.</span></span>
+      <p class="footer__copy">&copy; 2025 Rodrygo Design</p>
+      <a href="index.html" class="footer__cv">Inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

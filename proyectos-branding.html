@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Branding &amp; Audiovisuales &mdash; Rodrygo Design</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="proyectos.css" />
+</head>
+<body>
+  <nav class="nav scrolled" id="nav">
+    <a href="index.html" class="nav__logo">RD<span class="nav__logo-dot">.</span></a>
+    <ul class="nav__links"></ul>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir men&uacute;">
+      <span></span><span></span><span></span>
+    </button>
+  </nav>
+
+  <div class="fmenu" id="mobMenu" aria-hidden="true">
+    <div class="fmenu__left">
+      <div class="fmenu__top"><span class="fmenu__label">Men&uacute;</span></div>
+      <nav class="fmenu__nav">
+        <div class="fmenu__item" style="--i:0">
+          <a href="index.html#inicio" class="fmenu__link" data-preview="0">
+            <span class="fmenu__num">01</span><span class="fmenu__text">Inicio</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:1">
+          <a href="index.html#servicios" class="fmenu__link" data-preview="1">
+            <span class="fmenu__num">02</span><span class="fmenu__text">Servicios</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:2">
+          <a href="index.html#experiencia" class="fmenu__link" data-preview="2">
+            <span class="fmenu__num">03</span><span class="fmenu__text">Experiencia</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:3">
+          <a href="index.html#contacto" class="fmenu__link" data-preview="3">
+            <span class="fmenu__num">04</span><span class="fmenu__text">Contacto</span><span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+      </nav>
+      <div class="fmenu__footer">
+        <a href="cv_rodrigo_seco.pdf" target="_blank" class="fmenu__cv" rel="noreferrer">Descargar CV &#8594;</a>
+        <div class="fmenu__socials">
+          <a href="https://instagram.com" target="_blank" class="fmenu__social" rel="noreferrer">IG</a>
+          <a href="https://linkedin.com/in/rodrigo-seco-fiastre-158207328" target="_blank" class="fmenu__social" rel="noreferrer">LI</a>
+          <a href="https://x.com" target="_blank" class="fmenu__social" rel="noreferrer">X</a>
+          <a href="https://wa.me/34601394354" target="_blank" class="fmenu__social" rel="noreferrer">WA</a>
+        </div>
+      </div>
+    </div>
+    <div class="fmenu__right">
+      <div class="fmenu__preview fmenu__preview--0 is-active">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Inicio</span>
+          <p class="fmenu__preview-copy">Dise&ntilde;ador multidisciplinar.<br />Conectando ideas con arte visual.</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--1">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Servicios</span>
+          <p class="fmenu__preview-copy">3D &middot; Animaci&oacute;n &middot; Branding<br />Web &middot; Audiovisuales</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--2">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Experiencia</span>
+          <p class="fmenu__preview-copy">Nuevecomanueve<br />Equipo de Comunicaci&oacute;n</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--3">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Contacto</span>
+          <p class="fmenu__preview-copy">&iquest;Tienes un proyecto?<br />Hablemos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <header class="proj-hero proj-hero--media" style="--grad: linear-gradient(150deg,#080d1c,#0e1630,#080c1c)">
+    <img class="proj-hero__media" src="img/proyectos/fgp/fgp-presentacion.JPG" alt="" loading="eager" aria-hidden="true" />
+    <div class="proj-hero__inner container">
+      <a href="index.html#servicios" class="proj-back">&#8592; Volver</a>
+      <span class="proj-hero__num">04</span>
+      <h1 class="proj-hero__title">Branding &amp; Audiovisuales</h1>
+      <p class="proj-hero__desc">Identidad de marca, dise&ntilde;o editorial, redes sociales y edici&oacute;n audiovisual con narrativa e impacto.</p>
+      <div class="proj-hero__tags">
+        <span>Branding</span><span>Editorial</span><span>V&iacute;deo</span><span>Redes</span>
+      </div>
+    </div>
+  </header>
+
+  <main class="proj-grid container">
+    <figure class="proj-placeholder proj-media">
+      <video muted loop playsinline preload="metadata" poster="img/proyectos/medusa_fest/medusa-fest-portada.JPG">
+        <source src="img/proyectos/medusa_fest/medusa_fest_promo.mp4" type="video/mp4" />
+      </video>
+      <span class="proj-media__label">Promo festival</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <img src="img/proyectos/fgp/fgp-presentacion.JPG" alt="Presentaci&oacute;n corporativa de Grupo Gea Perona" loading="lazy" />
+      <span class="proj-media__label">Presentaci&oacute;n corporativa</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <img src="img/proyectos/fgp/cringas-portada.png" alt="Identidad visual de Cringas" loading="lazy" />
+      <span class="proj-media__label">Cringas</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <img src="img/proyectos/fgp/hidrona-portada.png" alt="Identidad visual de Hidrona" loading="lazy" />
+      <span class="proj-media__label">Hidrona</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <img src="img/proyectos/fgp/hynology-portada.png" alt="Identidad visual de Hynology" loading="lazy" />
+      <span class="proj-media__label">Hynology</span>
+    </figure>
+    <figure class="proj-placeholder proj-media">
+      <img src="img/proyectos/fgp/naftran-portada.png" alt="Identidad visual de Naftran" loading="lazy" />
+      <span class="proj-media__label">Naftran</span>
+    </figure>
+    <figure class="proj-placeholder proj-embed">
+      <iframe src="https://www.youtube.com/embed/Uh8J3GvU9h8" title="YouTube 01" loading="lazy" allowfullscreen></iframe>
+      <span class="proj-media__label">YouTube 01</span>
+    </figure>
+    <figure class="proj-placeholder proj-embed">
+      <iframe src="https://www.youtube.com/embed/KomMbiiicDk" title="YouTube 02" loading="lazy" allowfullscreen></iframe>
+      <span class="proj-media__label">YouTube 02</span>
+    </figure>
+    <figure class="proj-placeholder proj-embed">
+      <iframe src="https://www.youtube.com/embed/Ss0J9_e8UfA" title="YouTube 03" loading="lazy" allowfullscreen></iframe>
+      <span class="proj-media__label">YouTube 03</span>
+    </figure>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">RD<span class="nav__logo-dot">.</span></span>
+      <p class="footer__copy">&copy; 2025 Rodrygo Design</p>
+      <a href="index.html" class="footer__cv">Inicio</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,373 +1,361 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Rodrygo Design Portfolio</title>
-
-  <!-- Estilos -->
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Font Awesome + Google Fonts -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
-
-  <!-- Model Viewer -->
-  <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Rodrygo Design &mdash; Dise&ntilde;ador Multidisciplinar</title>
+  <meta
+    name="description"
+    content="Portfolio de Rodrigo Seco Fiastre &mdash; Dise&ntilde;o 3D, Animaci&oacute;n, Web Design, Branding y Audiovisuales."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-
-<!-- ==============================
-     LANG SWITCHER 
-=============================== -->
-<div class="lang-switcher" id="lang-switcher" title="Cambiar idioma">
-  <img src="bandera-es.svg" alt="Idioma actual" id="current-flag">
-</div>
-
-  <!-- ==============================
-       NAVBAR
-  =============================== -->
-  <nav class="navbar">
-    <ul>
-      <li><a href="index.html" data-es="Inicio" data-en="Home">Inicio</a></li>
-      <li><a href="#proyects-section" data-es="Proyectos" data-en="Projects">Proyectos</a></li>
-      <li><a href="cv_rodrigo_seco.pdf" target="_blank">CV</a></li>
+  <nav class="nav" id="nav">
+    <a href="#inicio" class="nav__logo">RD<span class="nav__logo-dot">.</span></a>
+    <ul class="nav__links">
+      <li><a href="#inicio" class="nav__link">Inicio</a></li>
+      <li><a href="#servicios" class="nav__link">Servicios</a></li>
+      <li><a href="#experiencia" class="nav__link">Experiencia</a></li>
+      <li><a href="#contacto" class="nav__link">Contacto</a></li>
+      <li><a href="cv_rodrigo_seco.pdf" target="_blank" class="nav__link nav__link--cv" rel="noreferrer">CV</a></li>
     </ul>
+    <button class="nav__burger" id="navBurger" aria-label="Abrir men&uacute;">
+      <span></span><span></span><span></span>
+    </button>
   </nav>
 
-  <!-- ==============================
-       OVERLAY
-  =============================== -->
-  <div class="overlay" id="overlay" tabindex="-1" aria-hidden="true"></div>
-
-  <!-- ==============================
-       HERO
-  =============================== -->
-<section class="hero" id="hero">
-
-  <video autoplay muted loop playsinline id="hero-video">
-    <source src="img/proyectos/3d-caballero/0001.mp4" type="video/mp4">
-    Tu navegador no soporta video en HTML5.
-  </video>
-
-  <!-- Texto -->
-  <h1 class="hero-text" id="split-text">Rodrygo Design</h1>
-
-  <!-- Canvas -->
-  <canvas id="mouse-line-trail"></canvas>
-</section>
-
-<!-- GSAP -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-
-<!-- Tu script -->
-<script src="script.js"></script>
-
-  <!-- ==============================
-       CARRUSEL DE SECCIONES
-  =============================== -->
-  <section class="sections-carousel">
-    <div class="carousel">
-      <div class="carousel-track">
-        <div class="carousel-item" data-es="Diseño 3D" data-en="3D Design">Diseño 3D</div>
-        <div class="carousel-item" data-es="Animación" data-en="Animation">Animación</div>
-        <div class="carousel-item" data-es="Branding" data-en="Branding">Branding</div>
-        <div class="carousel-item" data-es="Audiovisuales" data-en="Audiovisuals">Audiovisuales</div>
-        <div class="carousel-item" data-es="Renders" data-en="Renders">Renders</div>
-        <div class="carousel-item" data-es="Editorial" data-en="Editorial">Editorial</div>
-        <div class="carousel-item" data-es="Maquetas" data-en="Mockups">Maquetas</div>
-        <div class="carousel-item" data-es="Modelado 3D" data-en="3D Modeling">Modelado 3D</div>
-        <div class="carousel-item" data-es="Animación 3D" data-en="3D Animation">Animación 3D</div>
-        <div class="carousel-item" data-es="Grafismos en movimiento" data-en="Motion Graphics">Grafismos en movimiento</div>
-        <div class="carousel-item" data-es="Redes Sociales" data-en="Social Media">Redes Sociales</div>
+  <div class="fmenu" id="mobMenu" aria-hidden="true">
+    <div class="fmenu__left">
+      <div class="fmenu__top">
+        <span class="fmenu__label">Men&uacute;</span>
       </div>
+      <nav class="fmenu__nav">
+        <div class="fmenu__item" style="--i:0">
+          <a href="#inicio" class="fmenu__link" data-preview="0">
+            <span class="fmenu__num">01</span>
+            <span class="fmenu__text">Inicio</span>
+            <span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:1">
+          <a href="#servicios" class="fmenu__link" data-preview="1">
+            <span class="fmenu__num">02</span>
+            <span class="fmenu__text">Servicios</span>
+            <span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:2">
+          <a href="#experiencia" class="fmenu__link" data-preview="2">
+            <span class="fmenu__num">03</span>
+            <span class="fmenu__text">Experiencia</span>
+            <span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+        <div class="fmenu__item" style="--i:3">
+          <a href="#contacto" class="fmenu__link" data-preview="3">
+            <span class="fmenu__num">04</span>
+            <span class="fmenu__text">Contacto</span>
+            <span class="fmenu__arrow">&#8599;</span>
+          </a>
+        </div>
+      </nav>
+      <div class="fmenu__footer">
+        <a href="cv_rodrigo_seco.pdf" target="_blank" class="fmenu__cv" rel="noreferrer">Descargar CV &#8594;</a>
+        <div class="fmenu__socials">
+          <a href="https://instagram.com" target="_blank" class="fmenu__social" rel="noreferrer">IG</a>
+          <a href="https://linkedin.com/in/rodrigo-seco-fiastre-158207328" target="_blank" class="fmenu__social" rel="noreferrer">LI</a>
+          <a href="https://x.com" target="_blank" class="fmenu__social" rel="noreferrer">X</a>
+          <a href="https://wa.me/34601394354" target="_blank" class="fmenu__social" rel="noreferrer">WA</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="fmenu__right">
+      <div class="fmenu__preview fmenu__preview--0 is-active">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Inicio</span>
+          <p class="fmenu__preview-copy">Dise&ntilde;ador multidisciplinar.<br />Conectando ideas con arte visual.</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--1">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Servicios</span>
+          <p class="fmenu__preview-copy">3D &middot; Animaci&oacute;n &middot; Branding<br />Web &middot; Audiovisuales</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--2">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Experiencia</span>
+          <p class="fmenu__preview-copy">Nuevecomanueve<br />Equipo de Comunicaci&oacute;n</p>
+        </div>
+      </div>
+      <div class="fmenu__preview fmenu__preview--3">
+        <div class="fmenu__preview-inner">
+          <span class="fmenu__preview-tag">Contacto</span>
+          <p class="fmenu__preview-copy">&iquest;Tienes un proyecto?<br />Hablemos.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero" id="inicio">
+    <div class="hero__content">
+      <p class="hero__eyebrow reveal">Dise&ntilde;ador Multidisciplinar</p>
+      <h1 class="hero__title reveal">
+        Rodrygo<br /><em>Design</em>
+      </h1>
+      <p class="hero__desc reveal">
+        Doy vida a ideas a trav&eacute;s del dise&ntilde;o 3D, la animaci&oacute;n, el branding
+        y el dise&ntilde;o web. Cada proyecto es una oportunidad para conectar emocionalmente.
+      </p>
+      <div class="hero__ctas reveal">
+        <a href="#servicios" class="btn btn--primary">Ver mi trabajo</a>
+        <a href="#contacto" class="btn btn--ghost">Hablemos</a>
+      </div>
+    </div>
+    <div class="hero__visual">
+      <div class="hero__blob"></div>
+      <div class="hero__grid-bg"></div>
+    </div>
+    <div class="hero__scroll-hint">
+      <span>Scroll</span>
+      <div class="hero__scroll-line"></div>
     </div>
   </section>
 
-  <!-- ==============================
-       PROYECTOS / CARDS
-  =============================== -->
-<section id="proyects-section">
-  <div class="cards-container">
-
-    <!-- CARD 1: Animación -->
-    <div class="card-proyect">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M13 4a2 2 0 11-4 0 2 2 0 014 0zm4 16h-2v-3h-2.5l-2.6-3.4-.9 2.4c-.4 1-1.5 1.5-2.5 1.1s-1.5-1.5-1.1-2.5l1.7-4.6c.2-.5.6-.9 1.2-1.1.6-.2 1.3 0 1.7.5l3.2 3.9h3.3c1.1 0 2 .9 2 2v5c0 .6-.4 1-1 1z"/>
-      </svg>
-      <div class="card__content">
-        <p class="card__title"
-           data-es="Animación"
-           data-en="Animation">Animación</p>
-        <p class="card__description"
-           data-es="Desarrollo de animaciones 2D y motion graphics que combinan diseño visual y narrativa."
-           data-en="Development of 2D animations and motion graphics that combine visual design and storytelling.">
-           Desarrollo de animaciones 2D y motion graphics que combinan diseño visual y narrativa.
-        </p>
-        <button class="learn-more">
-    <a href="animacion.html" class="learn-more">
-      <span class="circle" aria-hidden="true"><span class="icon arrow"></span></span>
-      <span class="button-text">Ver más</span>
-    </a>
-        </button>
-      </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee__track">
+      <span>Dise&ntilde;o 3D</span><span class="sep">&#10022;</span>
+      <span>Animaci&oacute;n</span><span class="sep">&#10022;</span>
+      <span>Branding</span><span class="sep">&#10022;</span>
+      <span>Audiovisuales</span><span class="sep">&#10022;</span>
+      <span>Renders</span><span class="sep">&#10022;</span>
+      <span>Editorial</span><span class="sep">&#10022;</span>
+      <span>Modelado 3D</span><span class="sep">&#10022;</span>
+      <span>Motion Graphics</span><span class="sep">&#10022;</span>
+      <span>Redes Sociales</span><span class="sep">&#10022;</span>
+      <span>Dise&ntilde;o Web</span><span class="sep">&#10022;</span>
+      <span>Dise&ntilde;o 3D</span><span class="sep">&#10022;</span>
+      <span>Animaci&oacute;n</span><span class="sep">&#10022;</span>
+      <span>Branding</span><span class="sep">&#10022;</span>
+      <span>Audiovisuales</span><span class="sep">&#10022;</span>
+      <span>Renders</span><span class="sep">&#10022;</span>
+      <span>Editorial</span><span class="sep">&#10022;</span>
+      <span>Modelado 3D</span><span class="sep">&#10022;</span>
+      <span>Motion Graphics</span><span class="sep">&#10022;</span>
+      <span>Redes Sociales</span><span class="sep">&#10022;</span>
+      <span>Dise&ntilde;o Web</span><span class="sep">&#10022;</span>
     </div>
-
-    <!-- CARD 2: Diseño Web -->
-    <div class="card-proyect">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M3 4a1 1 0 011-1h16a1 1 0 011 1v13a1 1 0 01-1 1h-6v2h2a1 1 0 110 2H9a1 1 0 110-2h2v-2H4a1 1 0 01-1-1V4zm2 2v10h14V6H5z"/>
-      </svg>
-      <div class="card__content">
-        <p class="card__title"
-           data-es="Diseño Web"
-           data-en="Web Design">Diseño Web</p>
-        <p class="card__description"
-           data-es="Creación de sitios web modernos, funcionales y optimizados, usando coherencia visual de su marca."
-           data-en="Creation of modern, functional and optimized websites that reflect your brand’s visual identity.">
-           Creación de sitios web modernos, funcionales y optimizados, usando coherencia visual de su marca.
-        </p>
-        <button class="learn-more">
-    <a href="diseno-web.html" class="learn-more">
-      <span class="circle" aria-hidden="true"><span class="icon arrow"></span></span>
-      <span class="button-text">Ver más</span>
-    </a>
-        </button>
-      </div>
-    </div>
-
-    <!-- CARD 3: Diseño 3D -->
-    <div class="card-proyect">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M12 2l9 5v10l-9 5-9-5V7l9-5zm0 2.18L5 7.09v9.82l7 3.91 7-3.91V7.09l-7-2.91zm0 4.67l4.67 2.53-1.34.76L12 9.76l-3.33 1.78-1.34-.76L12 8.85z"/>
-      </svg>
-      <div class="card__content">
-        <p class="card__title"
-           data-es="Diseño 3D"
-           data-en="3D Design">Diseño 3D</p>
-        <p class="card__description"
-           data-es="Modelado, texturizado y renderizado de escenas 3D para productos, arquitectura y animaciones."
-           data-en="Modeling, texturing and rendering of 3D scenes for products, architecture, and animations.">
-           Modelado, texturizado y renderizado de escenas 3D para productos, arquitectura y animaciones.
-        </p>
-        <button class="learn-more">
-    <a href="diseno-3d.html" class="learn-more">
-      <span class="circle" aria-hidden="true"><span class="icon arrow"></span></span>
-      <span class="button-text">Ver más</span>
-    </a>
-        </button>
-      </div>
-    </div>
-
-    <!-- CARD 4: Audiovisuales -->
-    <div class="card-proyect">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor">
-        <path d="M17 10.5V7c0-1.1-.9-2-2-2H3C1.9 5 1 5.9 1 7v10c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2v-3.5l4 4v-11l-4 4z"/>
-      </svg>
-      <div class="card__content">
-        <p class="card__title"
-           data-es="Audiovisuales"
-           data-en="Audiovisuals">Audiovisuales</p>
-        <p class="card__description"
-           data-es="Edición audiovisual, combinando narrativa visual, sonido y ritmo para lograr piezas de alto impacto."
-           data-en="Audiovisual editing combining visual narrative, sound, and rhythm to create high-impact pieces.">
-           Edición audiovisual, combinando narrativa visual, sonido y ritmo para lograr piezas de alto impacto.
-        </p>
-        <button class="learn-more">
-    <a href="audiovisuales.html" class="learn-more">
-      <span class="circle" aria-hidden="true"><span class="icon arrow"></span></span>
-      <span class="button-text">Ver más</span>
-    </a>
-        </button>
-      </div>
-    </div>
-
   </div>
-</section>
 
+  <section class="services" id="servicios">
+    <div class="accordion">
+      <a href="proyectos-3d.html" class="acc-panel is-active" style="--hue: 220">
+        <div class="acc-panel__bg acc-panel__bg--0"></div>
+        <div class="acc-panel__media" aria-hidden="true">
+          <video autoplay muted loop playsinline preload="metadata" poster="img/proyectos/star_wars/vid_2-portada.png">
+            <source src="img/proyectos/star_wars/vid_2.mp4" type="video/mp4" />
+          </video>
+        </div>
+        <div class="acc-panel__collapsed">
+          <span class="acc-panel__num">01</span>
+          <span class="acc-panel__vtext">Dise&ntilde;o 3D</span>
+        </div>
+        <div class="acc-panel__expanded">
+          <span class="acc-panel__num">01</span>
+          <h3 class="acc-panel__title">Dise&ntilde;o 3D</h3>
+          <p class="acc-panel__desc">Modelado, texturizado y renderizado de escenas para productos, arquitectura y animaciones.</p>
+          <ul class="acc-panel__tags">
+            <li>Modelado 3D</li><li>Renders</li><li>Maquetas</li>
+          </ul>
+          <span class="acc-panel__cta">Ver proyectos <span class="acc-panel__arrow">&#8594;</span></span>
+        </div>
+      </a>
 
-  <!-- ==============================
-       RESUMEN DE PROYECTOS / FEATURES
-  =============================== -->
-  <section class="features-section" id="sections">
-    <div class="container-cards-feature">
-      <div class="card-feature reveal-right">
-        <div class="feature-block right-img">
-          <img src="img/colab/ncnlogo.png" alt="Nuevecomanueve" />
-          <div class="feature-text">
-            <h1 data-es="Experiencia Laboral" data-en="Job Experience">Experiencia Laboral</h1>
-            <h3 data-es="Nuevecomanueve | Agencia Creativa" data-en="Nuevecomanueve | Creative Agency">Nuevecomanueve | Agencia Creativa</h3>
-            <p data-es="Enero 2024 – Marzo 2024 (prácticas) | Septiembre 2024 – Noviembre 2024" data-en="January 2024 – March 2024 (internship) | September 2024 – November 2024">Enero 2024 – Marzo 2024 (prácticas) | Septiembre 2024 – Noviembre 2024</p>
-            <ul>
-              <li data-es="Diseño y maquetación de catálogos impresos y digitales." data-en="Design and layout of printed and digital catalogs.">Diseño y maquetación de catálogos impresos y digitales.</li>
-              <li data-es="Creación de contenido audiovisual y animaciones para redes sociales." data-en="Creation of audiovisual content and animations for social media.">Creación de contenido audiovisual y animaciones para redes sociales.</li>
-              <li data-es="Desarrollo de mockups y renders 3D para presentaciones profesionales." data-en="Development of mockups and 3D renders for professional presentations.">Desarrollo de mockups y renders 3D para presentaciones profesionales.</li>
-              <li data-es="Producción de animaciones gráficas y diseño editorial." data-en="Production of graphic animations and editorial design.">Producción de animaciones gráficas y diseño editorial.</li>
-              <li data-es="Implementación de sitios web con WordPress y HTML + CSS." data-en="Website implementation with WordPress and HTML + CSS.">Implementación de sitios web con <strong>WordPress</strong> y <strong>HTML + CSS</strong>.</li>
-            </ul>
-            <p data-es="Esta etapa me permitió fortalecer mi perfil como diseñador multidisciplinar, combinando creatividad y funcionalidad en cada proyecto." data-en="This stage allowed me to strengthen my profile as a multidisciplinary designer, combining creativity and functionality in each project.">Esta etapa me permitió fortalecer mi perfil como <strong>diseñador multidisciplinar</strong>, combinando creatividad y funcionalidad en cada proyecto.</p>
+      <a href="proyectos-animacion.html" class="acc-panel" style="--hue: 230">
+        <div class="acc-panel__bg acc-panel__bg--1"></div>
+        <div class="acc-panel__media" aria-hidden="true">
+          <img src="img/proyectos/motion_graphics/apocalipsis%20nuclear.png" alt="" loading="lazy" />
+        </div>
+        <div class="acc-panel__collapsed">
+          <span class="acc-panel__num">02</span>
+          <span class="acc-panel__vtext">Animaci&oacute;n</span>
+        </div>
+        <div class="acc-panel__expanded">
+          <span class="acc-panel__num">02</span>
+          <h3 class="acc-panel__title">Animaci&oacute;n</h3>
+          <p class="acc-panel__desc">Animaciones 2D y motion graphics que combinan dise&ntilde;o visual con storytelling efectivo.</p>
+          <ul class="acc-panel__tags">
+            <li>2D</li><li>Motion Graphics</li><li>Animaci&oacute;n 3D</li>
+          </ul>
+          <span class="acc-panel__cta">Ver proyectos <span class="acc-panel__arrow">&#8594;</span></span>
+        </div>
+      </a>
+
+      <a href="proyectos-web.html" class="acc-panel" style="--hue: 215">
+        <div class="acc-panel__bg acc-panel__bg--2"></div>
+        <div class="acc-panel__media acc-panel__media--empty" aria-hidden="true">
+          <div class="acc-panel__placeholder"></div>
+        </div>
+        <div class="acc-panel__collapsed">
+          <span class="acc-panel__num">03</span>
+          <span class="acc-panel__vtext">Dise&ntilde;o Web</span>
+        </div>
+        <div class="acc-panel__expanded">
+          <span class="acc-panel__num">03</span>
+          <h3 class="acc-panel__title">Dise&ntilde;o Web</h3>
+          <p class="acc-panel__desc">Sitios web modernos, funcionales y optimizados con consistencia de marca. HTML, CSS y WordPress.</p>
+          <ul class="acc-panel__tags">
+            <li>HTML/CSS</li><li>WordPress</li><li>UI Design</li>
+          </ul>
+          <span class="acc-panel__cta">Ver proyectos <span class="acc-panel__arrow">&#8594;</span></span>
+        </div>
+      </a>
+
+      <a href="proyectos-branding.html" class="acc-panel" style="--hue: 240">
+        <div class="acc-panel__bg acc-panel__bg--3"></div>
+        <div class="acc-panel__media" aria-hidden="true">
+          <img src="img/proyectos/fgp/fgp-presentacion.JPG" alt="" loading="lazy" />
+        </div>
+        <div class="acc-panel__collapsed">
+          <span class="acc-panel__num">04</span>
+          <span class="acc-panel__vtext">Branding &amp; AV</span>
+        </div>
+        <div class="acc-panel__expanded">
+          <span class="acc-panel__num">04</span>
+          <h3 class="acc-panel__title">Branding &amp; Audiovisuales</h3>
+          <p class="acc-panel__desc">Identidad de marca, dise&ntilde;o editorial, redes sociales y edici&oacute;n audiovisual con narrativa e impacto.</p>
+          <ul class="acc-panel__tags">
+            <li>Branding</li><li>Editorial</li><li>V&iacute;deo</li><li>Redes</li>
+          </ul>
+          <span class="acc-panel__cta">Ver proyectos <span class="acc-panel__arrow">&#8594;</span></span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <section class="experience" id="experiencia">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Trayectoria</span>
+        <h2 class="section-title">Experiencia</h2>
+      </div>
+      <div class="experience__layout">
+        <div class="experience__card reveal">
+          <div class="experience__badge">Agencia Creativa</div>
+          <h3 class="experience__company">Nuevecomanueve</h3>
+          <div class="experience__periods">
+            <span class="experience__period">Ene &ndash; Mar 2024</span>
+            <span class="experience__period">Sep &ndash; Nov 2024</span>
+          </div>
+          <ul class="experience__list">
+            <li>Dise&ntilde;o de cat&aacute;logos y material editorial</li>
+            <li>Contenido animado para redes sociales</li>
+            <li>3D: mockups y renders de producto</li>
+            <li>Desarrollo web con WordPress y HTML + CSS</li>
+          </ul>
+        </div>
+        <div class="experience__card reveal">
+          <div class="experience__badge">Marketing &amp; Comunicaci&oacute;n</div>
+          <h3 class="experience__company">Equipo de Comunicaci&oacute;n</h3>
+          <div class="experience__periods">
+            <span class="experience__period">Dic 2025 &ndash; Actualidad</span>
+          </div>
+          <ul class="experience__list">
+            <li>Desarrollo web con HTML + CSS</li>
+            <li>Contenido visual para redes sociales</li>
+            <li>Realizaci&oacute;n y edici&oacute;n de proyectos audiovisuales</li>
+            <li>Branding e identidad de marca</li>
+          </ul>
+        </div>
+        <div class="experience__values reveal">
+          <div class="value-item">
+            <span class="value-item__icon">&#10022;</span>
+            <div>
+              <h4 class="value-item__title">Pasi&oacute;n Creativa</h4>
+              <p class="value-item__desc">"La creatividad es el motor de todo lo que hago. Transmito emociones y conecto a trav&eacute;s del arte visual."</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">&#10022;</span>
+            <div>
+              <h4 class="value-item__title">Adaptabilidad</h4>
+              <p class="value-item__desc">"Como el agua, me adapto a nuevos retos y flujos de trabajo con naturalidad."</p>
+            </div>
+          </div>
+          <div class="value-item">
+            <span class="value-item__icon">&#10022;</span>
+            <div>
+              <h4 class="value-item__title">Ambici&oacute;n</h4>
+              <p class="value-item__desc">"La ambici&oacute;n me impulsa a superarme d&iacute;a tras d&iacute;a, buscando siempre la innovaci&oacute;n."</p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-
-<section id="cards-section">
-  <div class="container-cards">
-    <div class="card reveal">
-      <h2 data-es="Pasión Creativa" data-en="Creative Passion">Pasión Creativa</h2>
-      <p>"La creatividad es el motor de todo lo que hago. Cada proyecto, cada diseño y cada idea nace de un profundo compromiso por transmitir emociones y conectar con las personas a través del arte visual."</p>
-    </div>
-
-    <div class="card reveal">
-      <h2 data-es="Adaptabilidad" data-en="Adaptability">Adaptabilidad</h2>
-      <p data-es='"Como el agua, me adapto a nuevos retos y flujos de trabajo con facilidad. Aprender, evolucionar y ajustar mi enfoque según las circunstancias me permite entregar soluciones visuales elegantes y efectivas en cualquier contexto."' data-en='"Like water, I adapt to new challenges and workflows easily. Learning, evolving, and adjusting my approach according to circumstances allows me to deliver elegant and effective visual solutions in any context."'>"Como el agua, me adapto a nuevos retos y flujos de trabajo con facilidad. Aprender, evolucionar y ajustar mi enfoque según las circunstancias me permite entregar soluciones visuales elegantes y efectivas en cualquier contexto."</p>
-    </div>
-
-    <div class="card reveal">
-      <h2 data-es="Ambición" data-en="Ambition">Ambición</h2>
-      <p data-es='"La ambición me impulsa a superarme día tras día, explorando nuevas técnicas y conocimientos. Cada proyecto es una oportunidad de elevar mi creatividad y alcanzar niveles más altos de innovación y excelencia."' data-en='"Ambition drives me to surpass myself every day, exploring new techniques and knowledge. Each project is an opportunity to elevate my creativity and reach higher levels of innovation and excellence."'>"La ambición me impulsa a superarme día tras día, explorando nuevas técnicas y conocimientos. Cada proyecto es una oportunidad de elevar mi creatividad y alcanzar niveles más altos de innovación y excelencia."</p>
-    </div>
-  </div>
-
-</section>
-
-<section class="features-section" id="colaboradores">
-  <div class="container-cards-feature">
-    <div class="card-feature reveal-left">
-      <div class="feature-block left-img">
-
-        <!-- 🖼️ Carrusel de logos -->
-        <div class="carousel-container">
-          <div class="carousel-track">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ncnlogo.png" alt="ncn">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ncnlogo.png" alt="ncn">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ncnlogo.png" alt="ncn">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ncnlogo.png" alt="ncn">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ncnlogo.png" alt="ncn">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-            <img src="img/colab/ncnlogo.png" alt="ncn">
-            <img src="img/colab/ecolux.png" alt="Ecolux">
-            <img src="img/colab/geaperona.png" alt="Geaperona">
-            <img src="img/colab/iarobotics.png" alt="IA Robotics">
-            <img src="img/colab/ole.png" alt="Olé Group">
-          </div>
-        </div>
-
-        <!-- 🧠 Texto -->
-        <div class="feature-text">
-          <h1 data-es="Empresas Colaboradoras" data-en="Collaborating Companies">Empresas Colaboradoras</h1>
-          <h3 data-es="Marcas y organizaciones que confiaron en mi trabajo" data-en="Brands and organizations that trusted my work">Marcas y organizaciones que confiaron en mi trabajo</h3>
-          <p data-es="A lo largo de mi trayectoria he colaborado con diversas empresas en proyectos de diseño, desarrollo web y producción audiovisual, aportando soluciones creativas adaptadas a cada necesidad." 
-             data-en="Throughout my career, I have collaborated with several companies on design, web development, and audiovisual production projects, providing creative solutions tailored to each need.">
-            A lo largo de mi trayectoria he colaborado con diversas empresas en proyectos de <strong>diseño</strong>, <strong>desarrollo web</strong> y <strong>producción audiovisual</strong>, aportando soluciones creativas adaptadas a cada necesidad.
-          </p>
-        </div>
-
+  <section class="clients">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="section-label">Colaboraciones</span>
+        <h2 class="section-title">Han confiado en m&iacute;</h2>
+      </div>
+      <div class="clients__grid reveal">
+        <div class="client-item">Ecolux</div>
+        <div class="client-item">Geaperona</div>
+        <div class="client-item">IA Robotics</div>
+        <div class="client-item">Ol&eacute; Group</div>
+        <div class="client-item">Nuevecomanueve</div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-<!-- Footer -->
-<footer>
-<div class="card-footer">
-  <a target="_blank" href="https://www.instagram.com/rodrygodesign" class="socialContainer containerOne">
-    <svg class="socialSvg instagramSvg" viewBox="0 0 16 16"> <path d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.917 3.917 0 0 0-1.417.923A3.927 3.927 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.916 3.916 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.926 3.926 0 0 0-.923-1.417A3.911 3.911 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0h.003zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599.28.28.453.546.598.92.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.47 2.47 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.478 2.478 0 0 1-.92-.598 2.48 2.48 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233 0-2.136.008-2.388.046-3.231.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92.28-.28.546-.453.92-.598.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045v.002zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92zm-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217zm0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334z"></path> </svg>
-  </a>
-  
-  <a target="_blank" href="https://x.com/KomeL_oficial" class="socialContainer containerTwo">
-    <svg class="socialSvg twitterSvg" viewBox="0 0 16 16"> <path d="M5.026 15c6.038 0 9.341-5.003 9.341-9.334 0-.14 0-.282-.006-.422A6.685 6.685 0 0 0 16 3.542a6.658 6.658 0 0 1-1.889.518 3.301 3.301 0 0 0 1.447-1.817 6.533 6.533 0 0 1-2.087.793A3.286 3.286 0 0 0 7.875 6.03a9.325 9.325 0 0 1-6.767-3.429 3.289 3.289 0 0 0 1.018 4.382A3.323 3.323 0 0 1 .64 6.575v.045a3.288 3.288 0 0 0 2.632 3.218 3.203 3.203 0 0 1-.865.115 3.23 3.23 0 0 1-.614-.057 3.283 3.283 0 0 0 3.067 2.277A6.588 6.588 0 0 1 .78 13.58a6.32 6.32 0 0 1-.78-.045A9.344 9.344 0 0 0 5.026 15z"></path> </svg>              </a>
-    
-  <a target="_blank" href="https://www.linkedin.com/in/rodrigo-seco-fiastre-158207328" class="socialContainer containerThree">
-    <svg class="socialSvg linkdinSvg" viewBox="0 0 448 512"><path d="M100.28 448H7.4V148.9h92.88zM53.79 108.1C24.09 108.1 0 83.5 0 53.8a53.79 53.79 0 0 1 107.58 0c0 29.7-24.1 54.3-53.79 54.3zM447.9 448h-92.68V302.4c0-34.7-.7-79.2-48.29-79.2-48.29 0-55.69 37.7-55.69 76.7V448h-92.78V148.9h89.08v40.8h1.3c12.4-23.5 42.69-48.3 87.88-48.3 94 0 111.28 61.9 111.28 142.3V448z"></path></svg>
-  </a>
-  
-  <a target="_blank" href="https://api.whatsapp.com/send/?phone=34601394354&text=Hello+Rodrygo%2C+I+saw+your+portfolio%21&type=phone_number&app_absent=0" class="socialContainer containerFour">
-    <svg class="socialSvg whatsappSvg" viewBox="0 0 16 16"> <path d="M13.601 2.326A7.854 7.854 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.933 7.933 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.898 7.898 0 0 0 13.6 2.326zM7.994 14.521a6.573 6.573 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.557 6.557 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592zm3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.729.729 0 0 0-.529.247c-.182.198-.691.677-.691 1.654 0 .977.71 1.916.81 2.049.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232z"></path> </svg>
-  </a>
-</div>             
-
-
-    <p>&copy; 2025 Rodrygo Design. All rights reserved.</p>
-</footer>
-
-
-
-<div id="lightbox" class="popart-lightbox" aria-hidden="true" role="dialog" aria-label="Visor de medios">
-  <div class="popart-content-wrapper">
-    <div class="popart-controls">
-      <button id="lb-close" aria-label="Cerrar visor" title="Cerrar">✕</button>
+  <section class="contact" id="contacto">
+    <div class="container">
+      <div class="contact__inner reveal">
+        <div class="contact__text">
+          <span class="section-label">Contacto</span>
+          <h2 class="section-title">&iquest;Tienes un proyecto?</h2>
+          <p class="contact__desc">Estoy disponible para proyectos freelance y colaboraciones. Hablemos sobre tu pr&oacute;xima idea.</p>
+          <a href="https://wa.me/34601394354" target="_blank" class="btn btn--primary contact__whatsapp" rel="noreferrer">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+            WhatsApp
+          </a>
+        </div>
+        <div class="contact__socials">
+          <a href="https://linkedin.com/in/rodrigo-seco-fiastre-158207328" target="_blank" class="social-link" rel="noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a href="https://instagram.com" target="_blank" class="social-link" rel="noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+            Instagram
+          </a>
+          <a href="https://x.com" target="_blank" class="social-link" rel="noreferrer">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-4.714-6.231-5.401 6.231H2.748l7.73-8.835L1.254 2.25H8.08l4.259 5.63 5.905-5.63zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            X (Twitter)
+          </a>
+        </div>
+      </div>
     </div>
-    <div id="lightbox-content" class="popart-content" tabindex="0"></div>
-  </div>
-</div>
+  </section>
 
+  <footer class="footer">
+    <div class="container footer__inner">
+      <span class="footer__logo">RD<span class="nav__logo-dot">.</span></span>
+      <p class="footer__copy">&copy; 2025 Rodrygo Design &mdash; Rodrigo Seco Fiastre</p>
+      <a href="cv_rodrigo_seco.pdf" target="_blank" class="footer__cv" rel="noreferrer">Descargar CV</a>
+    </div>
+  </footer>
 
-<script>
-  const switcher = document.getElementById("lang-switcher");
-  const currentFlag = document.getElementById("current-flag");
-  let currentLang = localStorage.getItem("lang") || "es";
-
-  // Función para actualizar idioma
-  function updateLanguage(lang) {
-    document.querySelectorAll("[data-es]").forEach(el => {
-      const text = el.getAttribute(`data-${lang}`);
-      if (text) el.innerHTML = text;
-    });
-
-    currentFlag.src = lang === "es" ? "bandera-es.svg" : "bandera-en.svg";
-    document.documentElement.lang = lang;
-    localStorage.setItem("lang", lang);
-    currentLang = lang;
-  }
-
-  // Inicializar idioma al cargar
-  updateLanguage(currentLang);
-
-  // Alternar idioma al hacer clic
-  switcher.addEventListener("click", () => {
-    const newLang = currentLang === "es" ? "en" : "es";
-    updateLanguage(newLang);
-  });
-</script>
-
-
-
-
-
-
-
-
+  <script src="script.js"></script>
 </body>
 </html>
-
